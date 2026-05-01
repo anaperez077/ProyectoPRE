@@ -1,0 +1,85 @@
+DROP TABLE IF EXISTS Detalle_Venta;
+DROP TABLE IF EXISTS Ventas;
+DROP TABLE IF EXISTS Inventario;
+DROP TABLE IF EXISTS Productos;
+DROP TABLE IF EXISTS Proveedores;
+DROP VIEW if EXISTS Proveedores_visibles;
+
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE Proveedores(
+    id_proveedor INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre_proveedor TEXT,
+    telefono_proveedor TEXT
+);
+
+CREATE TABLE Productos (
+    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre_producto TEXT,
+    descripcion_producto TEXT,
+    id_proveedor INTEGER DEFAULT 0,
+    FOREIGN KEY (id_proveedor)
+    REFERENCES Proveedores(id_proveedor)
+    ON DELETE SET DEFAULT
+);
+
+CREATE TABLE Inventario (
+    id_inventario INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_producto INTEGER UNIQUE,
+    stock_producto INTEGER,
+    precio_producto REAL,
+    FOREIGN KEY (id_producto)
+    REFERENCES Productos(id_producto)
+    ON DELETE CASCADE
+);
+
+CREATE TABLE Ventas (
+    id_venta INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Detalle_Venta (
+    id_detalle INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_venta INTEGER,
+    id_producto INTEGER,
+    nombre_producto TEXT,
+    cantidad INTEGER,
+    precio REAL,
+    FOREIGN KEY (id_venta)
+    REFERENCES Ventas(id_venta)
+    ON DELETE CASCADE,
+    FOREIGN KEY (id_producto)
+    REFERENCES Productos(id_producto)
+);
+
+
+INSERT INTO Proveedores (id_proveedor, nombre_proveedor, telefono_proveedor)
+VALUES (0, 'Proveedor eliminado', 'N/A');
+
+
+CREATE TRIGGER descontar_inventario
+AFTER INSERT ON Detalle_Venta
+FOR EACH ROW
+BEGIN
+    UPDATE Inventario
+    SET stock_producto = stock_producto - NEW.cantidad
+    WHERE id_producto = NEW.id_producto;
+END;
+
+
+CREATE TRIGGER evitar_stock_negativo
+BEFORE INSERT ON Detalle_Venta
+FOR EACH ROW
+BEGIN
+    SELECT CASE
+        WHEN (SELECT stock_producto 
+              FROM Inventario 
+              WHERE id_producto = NEW.id_producto) < NEW.cantidad
+        THEN RAISE(ABORT, 'Stock insuficiente')
+    END;
+END;
+
+CREATE VIEW Proveedores_visibles AS
+SELECT *
+FROM Proveedores
+WHERE id_proveedor != 0;
