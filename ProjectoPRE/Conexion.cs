@@ -1,5 +1,5 @@
 ﻿using System.Data.SQLite;
-
+//Codigo para verificar la conexion de la base de datos
 public class Conexion
 {
     
