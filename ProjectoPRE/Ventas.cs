@@ -160,5 +160,15 @@ namespace ProjectoPRE
                 }
             }
         }
+
+        private void dgvCarrito_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
