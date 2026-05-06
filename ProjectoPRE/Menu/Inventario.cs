@@ -3,6 +3,9 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
+//Falta añadir editar y eliminar datos
+//Se puede agregar una parte de mostrar datos y filtrarlos desde la BD
+
 namespace ProjectoPRE
 {
     public partial class Inventario : Form
@@ -56,7 +59,7 @@ namespace ProjectoPRE
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // VALIDACIÓN
+            // VALIDACIÓN CON AYUDA DE IA
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor llena el nombre y el precio.");
@@ -73,7 +76,7 @@ namespace ProjectoPRE
                     {
                         try
                         {
-                            // 1. Insertar en Productos
+                            // 1. Insertar en  tabla productos
                             string sqlProd = "INSERT INTO Productos (nombre_producto, descripcion_producto) VALUES (@nom, @desc); SELECT last_insert_rowid();";
                             SQLiteCommand cmd1 = new SQLiteCommand(sqlProd, conexion);
                             cmd1.Parameters.AddWithValue("@nom", txtNombre.Text);
@@ -82,7 +85,7 @@ namespace ProjectoPRE
                             // Obtenemos el ID que se acaba de crear
                             long idRecienCreado = (long)cmd1.ExecuteScalar();
 
-                            // 2. Insertar en Inventario usando ese ID
+                            // 2. Insertar en tabla Inventario usando ese ID
                             string sqlInv = "INSERT INTO Inventario (id_producto, stock_producto, precio_producto) VALUES (@id, @stock, @precio);";
                             SQLiteCommand cmd2 = new SQLiteCommand(sqlInv, conexion);
                             cmd2.Parameters.AddWithValue("@id", idRecienCreado);
@@ -93,7 +96,7 @@ namespace ProjectoPRE
                             transaccion.Commit();
                             MessageBox.Show("Producto e Inventario guardados correctamente.");
 
-                            CargarInventarioCompleto(); // Refrescar el grid
+                            CargarInventarioCompleto(); // Actualizar la tabla de los datos
                             LimpiarControles();
                         }
                         catch (Exception ex)
