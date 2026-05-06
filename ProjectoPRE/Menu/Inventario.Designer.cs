@@ -44,9 +44,9 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.YellowGreen;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(135, 291);
+            this.dataGridView1.Location = new System.Drawing.Point(155, 291);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -57,10 +57,10 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtNombre.Location = new System.Drawing.Point(473, 76);
+            this.txtNombre.Location = new System.Drawing.Point(477, 79);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(151, 22);
+            this.txtNombre.Size = new System.Drawing.Size(189, 19);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -69,7 +69,7 @@
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtDescripcion.Location = new System.Drawing.Point(473, 116);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(151, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(193, 22);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtStock
@@ -77,7 +77,7 @@
             this.txtStock.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtStock.Location = new System.Drawing.Point(473, 155);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(151, 22);
+            this.txtStock.Size = new System.Drawing.Size(130, 22);
             this.txtStock.TabIndex = 3;
             // 
             // btnAgregar
@@ -85,12 +85,13 @@
             this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAgregar.Location = new System.Drawing.Point(373, 240);
+            this.btnAgregar.Location = new System.Drawing.Point(387, 240);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(216, 33);
             this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "+Agregar al inventario\r\n\r\n\r\n";
+            this.btnAgregar.Text = "+ Agregar al inventario\r\n\r\n\r\n";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
@@ -100,15 +101,16 @@
             this.txtPrecio.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtPrecio.Location = new System.Drawing.Point(473, 194);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(151, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(130, 22);
             this.txtPrecio.TabIndex = 5;
             // 
             // Producto
             // 
             this.Producto.AutoSize = true;
+            this.Producto.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Producto.Location = new System.Drawing.Point(311, 79);
             this.Producto.Name = "Producto";
-            this.Producto.Size = new System.Drawing.Size(137, 16);
+            this.Producto.Size = new System.Drawing.Size(160, 19);
             this.Producto.TabIndex = 6;
             this.Producto.Text = "Nombre del producto:";
             this.Producto.Click += new System.EventHandler(this.label1_Click);
@@ -116,27 +118,30 @@
             // Descripcion
             // 
             this.Descripcion.AutoSize = true;
+            this.Descripcion.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Descripcion.Location = new System.Drawing.Point(366, 122);
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Size = new System.Drawing.Size(82, 16);
+            this.Descripcion.Size = new System.Drawing.Size(91, 19);
             this.Descripcion.TabIndex = 7;
             this.Descripcion.Text = "Descripcion:";
             // 
             // Stock
             // 
             this.Stock.AutoSize = true;
+            this.Stock.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stock.Location = new System.Drawing.Point(329, 161);
             this.Stock.Name = "Stock";
-            this.Stock.Size = new System.Drawing.Size(119, 16);
+            this.Stock.Size = new System.Drawing.Size(134, 19);
             this.Stock.TabIndex = 8;
             this.Stock.Text = "Cantidad en Stock:";
             // 
             // precio
             // 
             this.precio.AutoSize = true;
+            this.precio.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precio.Location = new System.Drawing.Point(353, 200);
             this.precio.Name = "precio";
-            this.precio.Size = new System.Drawing.Size(95, 16);
+            this.precio.Size = new System.Drawing.Size(112, 19);
             this.precio.TabIndex = 9;
             this.precio.Text = "Precio unitario:";
             // 
@@ -144,10 +149,13 @@
             // 
             this.Titulo.AutoSize = true;
             this.Titulo.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Titulo.Location = new System.Drawing.Point(429, 42);
+            this.Titulo.Location = new System.Drawing.Point(412, 39);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(133, 16);
+            this.Titulo.Size = new System.Drawing.Size(169, 22);
             this.Titulo.TabIndex = 10;
             this.Titulo.Text = "Gestion de Inventario";
             // 
@@ -155,9 +163,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.CancelButton = this.btnAgregar;
-            this.ClientSize = new System.Drawing.Size(1070, 726);
+            this.ClientSize = new System.Drawing.Size(999, 671);
             this.Controls.Add(this.Titulo);
             this.Controls.Add(this.precio);
             this.Controls.Add(this.Stock);

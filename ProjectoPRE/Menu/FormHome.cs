@@ -47,5 +47,10 @@ namespace ProjectoPRE.Menu
             Ventas frm = new Ventas(rolUsuario);
             frm.ShowDialog();
         }
+
+        private void lblTituloDashboard_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
