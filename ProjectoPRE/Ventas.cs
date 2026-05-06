@@ -51,9 +51,9 @@ namespace ProjectoPRE
                 return;
             }
 
-            int idProducto = (int)cmbProducto.SelectedValue;
+            int idProducto = Convert.ToInt32(cmbProducto.SelectedValue);
             string nombreProducto = cmbProducto.Text;
-            int cantidadSolicitada = (int)numCantidad.Value;
+            int cantidadSolicitada = Convert.ToInt32(numCantidad.Value);
 
             // Consultar stock y precio en la base de datos
             using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
