@@ -13,9 +13,11 @@ namespace ProjectoPRE
 {
     public partial class Ventas : Form
     {
-        public Ventas()
+    private string rolUsuario; // Para saber si es Admin o Empleado
+        public Ventas(string rol)
         {
             InitializeComponent();
+            this.rolUsuario = rol; // Guardamos lo que viene del formHome
         }
         private void Ventas_Load(object sender, EventArgs e)
         {

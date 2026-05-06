@@ -52,22 +52,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="Inventario.cs">
+    <Compile Include="Menu\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventario.Designer.cs">
+    <Compile Include="Menu\Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventas.cs">
+    <Compile Include="Menu\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas.Designer.cs">
+    <Compile Include="Menu\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Inventario.resx">
+    <EmbeddedResource Include="Menu\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,7 +99,7 @@
     <Content Include="LibreriaSJ.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Ventas.resx">
+    <EmbeddedResource Include="Menu\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />

@@ -9,10 +9,12 @@ namespace ProjectoPRE
     {
         // Ruta directa. Asegúrate de que el archivo .db esté en la carpeta bin/Debug
         private string cadenaConexion = "Data Source=LibreriaSJ.db;Version=3;";
+        private string rolUsuario; // Para saber si es Admin o Empleado
 
-        public Inventario()
+        public Inventario(string rol)
         {
             InitializeComponent();
+            this.rolUsuario = rol; // Guardamos lo que viene del formHome
         }
 
         private void Inventario_Load(object sender, EventArgs e)
