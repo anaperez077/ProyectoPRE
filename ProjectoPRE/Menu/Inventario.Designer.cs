@@ -46,11 +46,11 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LemonChiffon;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(155, 291);
+            this.dataGridView1.Location = new System.Drawing.Point(37, 298);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(685, 336);
+            this.dataGridView1.Size = new System.Drawing.Size(880, 361);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -165,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.CancelButton = this.btnAgregar;
-            this.ClientSize = new System.Drawing.Size(999, 671);
+            this.ClientSize = new System.Drawing.Size(1044, 671);
             this.Controls.Add(this.Titulo);
             this.Controls.Add(this.precio);
             this.Controls.Add(this.Stock);

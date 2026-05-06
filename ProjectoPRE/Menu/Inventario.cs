@@ -7,7 +7,7 @@ namespace ProjectoPRE
 {
     public partial class Inventario : Form
     {
-        // Ruta directa. Asegúrate de que el archivo .db esté en la carpeta bin/Debug
+        // Ruta directa de la base de datos a usar
         private string cadenaConexion = "Data Source=LibreriaSJ.db;Version=3;";
         private string rolUsuario; // Para saber si es Admin o Empleado
 
@@ -56,7 +56,7 @@ namespace ProjectoPRE
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // VALIDACIÓN BÁSICA
+            // VALIDACIÓN
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor llena el nombre y el precio.");
