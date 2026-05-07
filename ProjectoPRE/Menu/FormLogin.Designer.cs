@@ -38,11 +38,12 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(373, 103);
+            this.label1.Location = new System.Drawing.Point(405, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 22);
+            this.label1.Size = new System.Drawing.Size(200, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Escoja su perfil";
             // 
@@ -50,10 +51,12 @@
             // 
             this.btnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAdmin.Location = new System.Drawing.Point(188, 158);
+            this.btnAdmin.Location = new System.Drawing.Point(249, 128);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(202, 176);
+            this.btnAdmin.Size = new System.Drawing.Size(152, 143);
             this.btnAdmin.TabIndex = 1;
             this.btnAdmin.Text = "Administración";
             this.btnAdmin.UseVisualStyleBackColor = false;
@@ -62,10 +65,12 @@
             // btnEmpleado
             // 
             this.btnEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmpleado.Location = new System.Drawing.Point(498, 158);
+            this.btnEmpleado.Location = new System.Drawing.Point(544, 128);
+            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(202, 176);
+            this.btnEmpleado.Size = new System.Drawing.Size(152, 143);
             this.btnEmpleado.TabIndex = 2;
             this.btnEmpleado.Text = "Empleados";
             this.btnEmpleado.UseVisualStyleBackColor = false;
@@ -73,13 +78,14 @@
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(886, 517);
+            this.ClientSize = new System.Drawing.Size(1125, 569);
             this.Controls.Add(this.btnEmpleado);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);

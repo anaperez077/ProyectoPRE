@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
+//Codigos de las consultas, tablas, filtros a la BD realizados con ayuda de IA
+
 namespace ProjectoPRE.Menu
 {
     public partial class FormHome : Form
@@ -21,25 +23,34 @@ namespace ProjectoPRE.Menu
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
-            // Limpiamos la gráfica antes de cualquier cosa
+            // Aseguramos que los controles iniciales estén DENTRO del panel al empezar
+            if (!panelContenedor.Controls.Contains(chartStock))
+            {
+                panelContenedor.Controls.Add(chartStock);
+                panelContenedor.Controls.Add(lblTituloDashboard);
+            }
+
+            ConfigurarDashboard();
+        }
+
+        // Creamos este método para mostrar home segun perfil
+        private void ConfigurarDashboard()
+        {
             chartStock.Series["Series1"].Points.Clear();
 
             if (rolUsuario == "Admin")
             {
                 panelNavegacion.BackColor = Color.LightCoral;
                 lblTituloDashboard.Text = "Dashboard de Administrador";
-
-                chartStock.Visible = true;
-                CargarGraficaStock(); // Gráfica de Stock bajo para Admin
+                CargarGraficaStock();
             }
             else
             {
                 panelNavegacion.BackColor = Color.LightGreen;
                 lblTituloDashboard.Text = "Dashboard de Empleado";
-
-                chartStock.Visible = true; // la mostramos para el empleado
-                CargarGraficaVentasEmpleado(); // datos de ventas
+                CargarGraficaVentasEmpleado();
             }
+            chartStock.Visible = true;
         }
 
         private void CargarGraficaVentasEmpleado()
@@ -62,7 +73,6 @@ namespace ProjectoPRE.Menu
                     chartStock.Titles.Clear();
                     chartStock.Titles.Add("Top 5 Productos Más Vendidos");
 
-                    // Cambiamos el color de la gráfica para el empleado (un verde suave)
                     chartStock.Series["Series1"].Color = Color.MediumSeaGreen;
 
                     while (dr.Read())
@@ -73,7 +83,7 @@ namespace ProjectoPRE.Menu
             }
             catch (Exception ex)
             {
-                // Si no hay ventas aún, mostrar un mensaje amigable o dejar vacío
+                // Si no hay ventas aún, mostrar un mensaje
                 chartStock.Titles.Add("Sin datos de ventas aún");
             }
         }
@@ -111,22 +121,71 @@ namespace ProjectoPRE.Menu
             }
         }
 
+        //Ak hacer click en los botones abrir sus forms correspondientes
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            // Abrimos tu inventario y le pasamos el rol
-            Inventario frm = new Inventario(rolUsuario);
-            frm.ShowDialog();
+            
+            MostrarVentana(new Inventario(rolUsuario));
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            Ventas frm = new Ventas(rolUsuario);
-            frm.ShowDialog();
+            
+            MostrarVentana(new Ventas(rolUsuario));
         }
 
         private void lblTituloDashboard_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void chartStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MostrarVentana(Form ventanaHija)
+        {
+            // Si ya hay algo adentro (como la gráfica o otro formulario), lo borramos
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.Clear();
+            }
+
+            //Configuramos la nueva ventana para que se porte como un panel
+            ventanaHija.TopLevel = false;          // No es una ventana independiente
+            ventanaHija.FormBorderStyle = FormBorderStyle.None; // Sin bordes ni botones de cerrar
+            ventanaHija.Dock = DockStyle.Fill;     // Que se estire al tamaño del panel
+
+            // 3. La metemos al panel y la mostramos
+            this.panelContenedor.Controls.Add(ventanaHija);
+            ventanaHija.Show();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            // 1. Quitamos los formularios (Ventas/Inventario) pero NO borramos los controles del Home
+            // Buscamos si hay algún Form abierto y lo cerramos
+            foreach (Control item in panelContenedor.Controls)
+            {
+                if (item is Form)
+                {
+                    panelContenedor.Controls.Remove(item);
+                }
+            }
+
+            // 2. Aseguramos que la gráfica y el título vuelvan a ser visibles y estén ahí
+            chartStock.Visible = true;
+            lblTituloDashboard.Visible = true;
+
+            // 3. Refrescamos los datos
+            ConfigurarDashboard();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            //Colocar aqui el form de Proveedores
+        }
     }
+
 }

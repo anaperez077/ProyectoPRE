@@ -17,7 +17,10 @@ namespace ProjectoPRE
         public Inventario(string rol)
         {
             InitializeComponent();
-            this.rolUsuario = rol; // Guardamos lo que viene del formHome
+            this.rolUsuario = rol;
+
+            // Agrega esta línea para que el formulario se estire bien dentro del panel
+            this.Dock = DockStyle.Fill;
         }
 
         private void Inventario_Load(object sender, EventArgs e)
