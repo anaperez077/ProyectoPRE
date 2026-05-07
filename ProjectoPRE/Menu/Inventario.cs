@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Data;
-using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Drawing;
+using System.Reflection.Emit;
+using System.Windows.Forms;
 
-//Falta añadir editar y eliminar datos
-//Se puede agregar una parte de mostrar datos y filtrarlos desde la BD
 
 namespace ProjectoPRE
 {
@@ -23,10 +23,30 @@ namespace ProjectoPRE
         private void Inventario_Load(object sender, EventArgs e)
         {
             CargarInventarioCompleto();
-            if (rolUsuario == "Empleado") {
-    btnEliminar.Enabled = false;
-    btnEditar.Enabled = false;
-}
+
+            //Bucle para filtrar acciones segun el perfil
+            if (rolUsuario == "Empleado")
+            {
+                // 1. Ocultamos los botones de acción
+                btnAgregar.Visible = false;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+
+                // 2. Ocultamos los cuadros de texto y sus etiquetas (Labels)
+                
+                txtNombre.Visible = false;
+                txtDescripcion.Visible = false;
+                txtStock.Visible = false;
+                txtPrecio.Visible = false;
+
+                Producto.Visible = false; 
+                precio.Visible = false;
+                Descripcion.Visible = false;
+                Stock.Visible = false;
+
+                dataGridView1.Location = new Point(20, 130); 
+                dataGridView1.Size = new Size(750, 400);   
+            }
         }
 
         public void CargarInventarioCompleto()
@@ -61,63 +81,7 @@ namespace ProjectoPRE
             }
         }
 
-        //esta seccion del boton agregar no es la funcional, sin embargo si la borro deja de funcionar
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            // VALIDACIÓN CON AYUDA DE IA
-            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
-            {
-                MessageBox.Show("Por favor llena el nombre y el precio.");
-                return;
-            }
-
-            try
-            {
-                using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
-                {
-                    conexion.Open();
-                    // Iniciamos una transacción para asegurar que se guarde en AMBAS tablas o en ninguna
-                    using (var transaccion = conexion.BeginTransaction())
-                    {
-                        try
-                        {
-                            // 1. Insertar en  tabla productos
-                            string sqlProd = "INSERT INTO Productos (nombre_producto, descripcion_producto) VALUES (@nom, @desc); SELECT last_insert_rowid();";
-                            SQLiteCommand cmd1 = new SQLiteCommand(sqlProd, conexion);
-                            cmd1.Parameters.AddWithValue("@nom", txtNombre.Text);
-                            cmd1.Parameters.AddWithValue("@desc", txtDescripcion.Text);
-
-                            // Obtenemos el ID que se acaba de crear
-                            long idRecienCreado = (long)cmd1.ExecuteScalar();
-
-                            // 2. Insertar en tabla Inventario usando ese ID
-                            string sqlInv = "INSERT INTO Inventario (id_producto, stock_producto, precio_producto) VALUES (@id, @stock, @precio);";
-                            SQLiteCommand cmd2 = new SQLiteCommand(sqlInv, conexion);
-                            cmd2.Parameters.AddWithValue("@id", idRecienCreado);
-                            cmd2.Parameters.AddWithValue("@stock", Convert.ToInt32(txtStock.Text));
-                            cmd2.Parameters.AddWithValue("@precio", Convert.ToDouble(txtPrecio.Text));
-                            cmd2.ExecuteNonQuery();
-
-                            transaccion.Commit();
-                            MessageBox.Show("Producto e Inventario guardados correctamente.");
-
-                            CargarInventarioCompleto(); // Actualizar la tabla de los datos
-                            LimpiarControles();
-                        }
-                        catch (Exception ex)
-                        {
-                            transaccion.Rollback(); // Si algo falla, deshace los cambios
-                            throw ex;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar datos: " + ex.Message);
-            }
-        }
-
+        //Limpiar botones del inventario
         private void LimpiarControles()
         {
             txtNombre.Clear();
@@ -138,8 +102,6 @@ namespace ProjectoPRE
             {
                 DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
 
-                // Pasamos los datos de la fila seleccionada a los TextBox
-                // Nota: El índice [1] es Nombre, [2] es Stock, etc., según tu SELECT
                 txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
                 txtStock.Text = fila.Cells["Stock"].Value.ToString();
                 txtPrecio.Text = fila.Cells["Precio Unitario"].Value.ToString();
@@ -222,8 +184,7 @@ namespace ProjectoPRE
 
         }
 
-     
-
+        //Proceso para eliminar un dato del inventario
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             {
@@ -237,7 +198,6 @@ namespace ProjectoPRE
                         using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
                         {
                             conexion.Open();
-                            // Al eliminar de Productos, por la relación de la BD, se debería borrar del inventario
                             string sql = "DELETE FROM Productos WHERE id_producto=@id";
                             SQLiteCommand cmd = new SQLiteCommand(sql, conexion);
                             cmd.Parameters.AddWithValue("@id", txtNombre.Tag);
@@ -254,6 +214,7 @@ namespace ProjectoPRE
 
         }
 
+        //Proceso para editar un producto de inventario
         private void btnEditar_Click(object sender, EventArgs e)
         {
             {
@@ -292,7 +253,56 @@ namespace ProjectoPRE
                 catch (Exception ex) { MessageBox.Show("Error al editar: " + ex.Message); }
             }
         }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            // Llamamos a una función que filtre la tabla mientras escribes
+            FiltrarDatos(txtBuscar.Text);
+        }
+
+        //Seccion para la bsuqueda de productos de la seccion cliente
+        private void FiltrarDatos(string textoABuscar) // El parámetro se llama textoABuscar
+        {
+            try
+            {
+                using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    // Consulta SQL corregida
+                    string query = @"SELECT 
+                                P.id_producto AS [ID Producto], 
+                                P.nombre_producto AS [Nombre], 
+                                IFNULL(I.stock_producto, 0) AS [Stock], 
+                                IFNULL(I.precio_producto, 0.0) AS [Precio Unitario],
+                                P.descripcion_producto AS [Descripción]
+                             FROM Productos P
+                             LEFT JOIN Inventario I ON P.id_producto = I.id_producto
+                             WHERE P.nombre_producto LIKE @filtro 
+                             OR CAST(P.id_producto AS TEXT) LIKE @filtro";
+
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(query, conexion);
+
+                    // ¡OJO AQUÍ! El "@filtro" debe coincidir con lo que escribiste en el query
+                    // Y "textoABuscar" debe ser igual al nombre que pusiste arriba en el paréntesis
+                    da.SelectCommand.Parameters.AddWithValue("@filtro", "%" + textoABuscar + "%");
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar: " + ex.Message);
+            }
+        }
     }
+   
 
 }
 
