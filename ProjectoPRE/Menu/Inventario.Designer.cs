@@ -197,7 +197,7 @@
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.txtBuscar.Location = new System.Drawing.Point(328, 84);
+            this.txtBuscar.Location = new System.Drawing.Point(342, 80);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(381, 22);
             this.txtBuscar.TabIndex = 13;

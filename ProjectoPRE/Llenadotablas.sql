@@ -31,3 +31,23 @@ INSERT INTO Inventario (id_producto, stock_producto, precio_producto) VALUES
 (13, 40, 10.00),
 (14, 100, 0.75),
 (15, 80, 2.25);
+
+
+INSERT INTO Ventas (id_venta, fecha) VALUES (8, '2026-05-02 14:20:00');
+INSERT INTO Ventas (id_venta, fecha) VALUES (9, '2026-05-03 09:15:00');
+INSERT INTO Ventas (id_venta, fecha) VALUES (10, '2026-05-04 18:45:00');
+INSERT INTO Ventas (id_venta, fecha) VALUES (11, '2026-05-05 11:00:00');
+INSERT INTO Ventas (id_venta, fecha) VALUES (12, '2026-05-06 16:30:00');
+
+-- Ventas del Ticket 7
+INSERT INTO Detalle_Venta (id_venta, id_producto, nombre_producto, cantidad, precio) VALUES (7, 2, 'Cuaderno Espiral', 5, 2.50);
+INSERT INTO Detalle_Venta (id_venta, id_producto, nombre_producto, cantidad, precio) VALUES (7, 5, 'Lapicero Negro', 10, 0.50);
+
+-- Ventas del Ticket 8
+INSERT INTO Detalle_Venta (id_venta, id_producto, nombre_producto, cantidad, precio) VALUES (8, 10, 'Diccionario Larousse', 2, 15.00);
+INSERT INTO Detalle_Venta (id_venta, id_producto, nombre_producto, cantidad, precio) VALUES (8, 15, 'Resaltadores Pack', 4, 3.75);
+
+
+-- Ventas del Ticket 10
+INSERT INTO Detalle_Venta (id_venta, id_producto, nombre_producto, cantidad, precio) VALUES (10, 30, 'Calculadora Científica', 1, 12.00);
+INSERT INTO Detalle_Venta (id_venta, id_producto, nombre_producto, cantidad, precio) VALUES (10, 2, 'Cuaderno Espiral', 1, 2.50);

@@ -40,7 +40,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(326, 70);
+            this.label1.Location = new System.Drawing.Point(373, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 22);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.btnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAdmin.Location = new System.Drawing.Point(124, 109);
+            this.btnAdmin.Location = new System.Drawing.Point(188, 158);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(202, 176);
             this.btnAdmin.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.btnEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEmpleado.Location = new System.Drawing.Point(428, 109);
+            this.btnEmpleado.Location = new System.Drawing.Point(498, 158);
             this.btnEmpleado.Name = "btnEmpleado";
             this.btnEmpleado.Size = new System.Drawing.Size(202, 176);
             this.btnEmpleado.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(886, 517);
             this.Controls.Add(this.btnEmpleado);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.label1);
