@@ -17,7 +17,11 @@ namespace ProjectoPRE
         public Ventas(string rol)
         {
             InitializeComponent();
-            this.rolUsuario = rol; // Guardamos lo que viene del formHome
+            this.rolUsuario = rol;
+
+            // AGREGA ESTAS DOS LÍNEAS:
+            this.TopLevel = false;
+            this.Dock = DockStyle.Fill;
         }
         private void Ventas_Load(object sender, EventArgs e)
         {
@@ -169,6 +173,11 @@ namespace ProjectoPRE
         }
 
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

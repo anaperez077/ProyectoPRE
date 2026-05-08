@@ -121,17 +121,17 @@ namespace ProjectoPRE.Menu
             }
         }
 
-        //Ak hacer click en los botones abrir sus forms correspondientes
+        //Al hacer click en los botones abrir sus forms correspondientes
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            
-            MostrarVentana(new Inventario(rolUsuario));
+
+            AbrirFormularioHijo(new Inventario(rolUsuario));
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            
-            MostrarVentana(new Ventas(rolUsuario));
+
+            AbrirFormularioHijo(new Ventas(rolUsuario));
         }
 
         private void lblTituloDashboard_Click(object sender, EventArgs e)
@@ -144,47 +144,66 @@ namespace ProjectoPRE.Menu
 
         }
 
-        private void MostrarVentana(Form ventanaHija)
-        {
-            // Si ya hay algo adentro (como la gráfica o otro formulario), lo borramos
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.Clear();
-            }
-
-            //Configuramos la nueva ventana para que se porte como un panel
-            ventanaHija.TopLevel = false;          // No es una ventana independiente
-            ventanaHija.FormBorderStyle = FormBorderStyle.None; // Sin bordes ni botones de cerrar
-            ventanaHija.Dock = DockStyle.Fill;     // Que se estire al tamaño del panel
-
-            // 3. La metemos al panel y la mostramos
-            this.panelContenedor.Controls.Add(ventanaHija);
-            ventanaHija.Show();
-        }
-
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            // 1. Quitamos los formularios (Ventas/Inventario) pero NO borramos los controles del Home
-            // Buscamos si hay algún Form abierto y lo cerramos
-            foreach (Control item in panelContenedor.Controls)
+            // 1. Buscamos y eliminamos CUALQUIER formulario que esté en el panel
+            // Usamos un ciclo for inverso para evitar errores de colección
+            for (int i = panelContenedor.Controls.Count - 1; i >= 0; i--)
             {
-                if (item is Form)
+                if (panelContenedor.Controls[i] is Form)
                 {
-                    panelContenedor.Controls.Remove(item);
+                    panelContenedor.Controls.RemoveAt(i);
                 }
             }
 
-            // 2. Aseguramos que la gráfica y el título vuelvan a ser visibles y estén ahí
+            // 2. Limpiamos títulos viejos para que no se amontonen con los nuevos
+            chartStock.Titles.Clear();
+
+            // 3. Hacemos visibles los controles base
             chartStock.Visible = true;
             lblTituloDashboard.Visible = true;
 
-            // 3. Refrescamos los datos
+            // Forzamos que se pongan al frente por si quedaron atrás
+            chartStock.BringToFront();
+            lblTituloDashboard.BringToFront();
+
+            // 4. Refrescamos datos
             ConfigurarDashboard();
+        }
+        private void AbrirFormularioHijo(Form formularioHijo)
+        {
+            // 1. Ocultamos la gráfica y el título en lugar de borrarlos
+            chartStock.Visible = false;
+            lblTituloDashboard.Visible = false;
+
+            // 2. Si ya hay OTRO formulario abierto (ej. abres Ventas estando en Inventario), ese sí lo quitamos
+            foreach (Control control in panelContenedor.Controls)
+            {
+                if (control is Form)
+                {
+                    panelContenedor.Controls.Remove(control);
+                    break;
+                }
+            }
+
+            // 3. Configuramos y mostramos el nuevo formulario
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+
+            panelContenedor.Controls.Add(formularioHijo);
+            panelContenedor.Tag = formularioHijo;
+            formularioHijo.Show();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             //Colocar aqui el form de Proveedores
+        }
+
+        private void panelNavegacion_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

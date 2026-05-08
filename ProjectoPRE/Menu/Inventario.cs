@@ -19,7 +19,8 @@ namespace ProjectoPRE
             InitializeComponent();
             this.rolUsuario = rol;
 
-            // Agrega esta línea para que el formulario se estire bien dentro del panel
+            // Esto es para que el formulario se adapte al tamaño del hueco derecho
+            this.TopLevel = false;
             this.Dock = DockStyle.Fill;
         }
 
@@ -47,8 +48,8 @@ namespace ProjectoPRE
                 Descripcion.Visible = false;
                 Stock.Visible = false;
 
-                dataGridView1.Location = new Point(20, 130); 
-                dataGridView1.Size = new Size(750, 400);   
+                //dataGridView1.Location = new Point(150, 130); 
+                //dataGridView1.Size = new Size(750, 400);   
             }
         }
 

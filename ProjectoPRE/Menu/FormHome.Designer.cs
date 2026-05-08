@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.chartStock = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblTituloDashboard = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@
             // 
             // panelContenedor
             // 
-            this.panelContenedor.Controls.Add(this.panelNavegacion);
             this.panelContenedor.Controls.Add(this.chartStock);
             this.panelContenedor.Controls.Add(this.lblTituloDashboard);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -59,18 +58,18 @@
             // chartStock
             // 
             this.chartStock.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            chartArea2.Name = "ChartArea1";
-            this.chartStock.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStock.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chartStock.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartStock.Legends.Add(legend8);
             this.chartStock.Location = new System.Drawing.Point(334, 85);
             this.chartStock.Margin = new System.Windows.Forms.Padding(2);
             this.chartStock.Name = "chartStock";
             this.chartStock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartStock.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartStock.Series.Add(series8);
             this.chartStock.Size = new System.Drawing.Size(653, 423);
             this.chartStock.TabIndex = 3;
             this.chartStock.Text = "chart1";
@@ -91,17 +90,18 @@
             // panelNavegacion
             // 
             this.panelNavegacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panelNavegacion.Controls.Add(this.btnProveedores);
-            this.panelNavegacion.Controls.Add(this.btnInventario);
-            this.panelNavegacion.Controls.Add(this.btnVentas);
-            this.panelNavegacion.Controls.Add(this.btnInicio);
             this.panelNavegacion.Controls.Add(this.PanelN);
+            this.panelNavegacion.Controls.Add(this.btnInicio);
+            this.panelNavegacion.Controls.Add(this.btnVentas);
+            this.panelNavegacion.Controls.Add(this.btnInventario);
+            this.panelNavegacion.Controls.Add(this.btnProveedores);
             this.panelNavegacion.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNavegacion.Location = new System.Drawing.Point(0, 0);
             this.panelNavegacion.Margin = new System.Windows.Forms.Padding(2);
             this.panelNavegacion.Name = "panelNavegacion";
             this.panelNavegacion.Size = new System.Drawing.Size(171, 566);
             this.panelNavegacion.TabIndex = 4;
+            this.panelNavegacion.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNavegacion_Paint);
             // 
             // PanelN
             // 
@@ -168,6 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1140, 566);
+            this.Controls.Add(this.panelNavegacion);
             this.Controls.Add(this.panelContenedor);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormHome";
