@@ -13,7 +13,17 @@ namespace ProjectoPRE
 {
     public partial class Proveedores : Form
     {
+        private string rolUsuario; // Para saber si es Admin o Empleado
 
+        public Proveedores(string rol)
+        {
+            InitializeComponent();
+            this.rolUsuario = rol;
+
+            //Adaptar el form al diseño del contenedor 
+            this.TopLevel = false;
+            this.Dock = DockStyle.Fill;
+        }
         public void CargarDatos()
         {
             string cadenaConexion = "Data Source=LibreriaSJ.db;Version=3";
@@ -36,25 +46,16 @@ namespace ProjectoPRE
             }
         }
 
-        public Proveedores()
-        {
-            InitializeComponent();
-        }
-
-        private void proveedores_Load(object sender, EventArgs e)
+        private void Proveedores_Load(object sender, EventArgs e)
         {
             CargarDatos();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            proveedoresAgregar segundoformProv = new proveedoresAgregar();
+            AgregarProveedores segundoformProv = new AgregarProveedores(rolUsuario);
             segundoformProv.ShowDialog();
-            CargarDatos();
+            CargarDatos();  
         
         }
 
@@ -66,11 +67,11 @@ namespace ProjectoPRE
                 return;
             }
 
-            proveedoresAgregar frm = new proveedoresAgregar(); //instancia del form2
+            AgregarProveedores frm = new AgregarProveedores(rolUsuario); //instancia del form2
 
             frm.idSeleccionado = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
-            //lenando textbox directamente
+            //llenando textbox directamente
 
             frm.textBox3.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString(); // ID
             frm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString(); // Nombre
@@ -95,7 +96,7 @@ namespace ProjectoPRE
 
             }
 
-            //obteniendo id de fila seleccionada
+            //obteniendo ID de fila seleccionada
 
             var valorId = dataGridView1.CurrentRow.Cells[0].Value;  
 
@@ -173,11 +174,6 @@ namespace ProjectoPRE
                     MessageBox.Show("Error al buscar: " + ex.Message);
                 }
             }
-    }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -164,6 +164,10 @@ namespace ProjectoPRE.Menu
             //Refrescamos datos
             ConfigurarDashboard();
         }
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Proveedores(rolUsuario));
+        }
         private void AbrirFormularioHijo(Form formularioHijo)
         {
             //Ocultamos la gráfica y el título en lugar de borrarlos
@@ -188,11 +192,6 @@ namespace ProjectoPRE.Menu
             panelContenedor.Controls.Add(formularioHijo);
             panelContenedor.Tag = formularioHijo;
             formularioHijo.Show();
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            //Colocar aqui el form de Proveedores
         }
 
     }

@@ -12,7 +12,7 @@ using System.Linq.Expressions;
 
 namespace ProjectoPRE
 {
-    public partial class proveedoresAgregar : Form
+    public partial class AgregarProveedores : Form
     {
 
         public string idSeleccionado = null;
@@ -20,10 +20,16 @@ namespace ProjectoPRE
         public string NombreProveedor { get; set; }
         public string TelefonoProveedor { get; set; }
 
+        private string rolUsuario; // Para saber si es Admin o Empleado
 
-        public proveedoresAgregar()
+        public AgregarProveedores(string rol)
         {
             InitializeComponent();
+            this.rolUsuario = rol;
+
+            //Adaptar el form al diseño del contenedor 
+            this.TopLevel = false;
+            this.Dock = DockStyle.Fill;
         }
 
         private void proveedoresAgregar_Load(object sender, EventArgs e)
@@ -39,9 +45,9 @@ namespace ProjectoPRE
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-          
+
             this.Close();
-            
+
         }
 
         private void btnagregar2_Click(object sender, EventArgs e)
@@ -49,7 +55,7 @@ namespace ProjectoPRE
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
             {
                 MessageBox.Show("Por favor, completa todos los campos antes de continuar.");
-                return; 
+                return;
             }
 
             string cadenaConexion = "Data Source=LibreriaSJ.db;Version=3;";
@@ -83,11 +89,11 @@ namespace ProjectoPRE
                     }
                 }
 
-            string msj = string.IsNullOrEmpty(idSeleccionado) ? "agregado" : "actualizado";
-            MessageBox.Show($"Proveedor {msj} con éxito.");
+                string msj = string.IsNullOrEmpty(idSeleccionado) ? "agregado" : "actualizado";
+                MessageBox.Show($"Proveedor {msj} con éxito.");
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -96,16 +102,11 @@ namespace ProjectoPRE
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 
