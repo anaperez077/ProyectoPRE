@@ -67,7 +67,6 @@
 			this.cmbProducto.Name = "cmbProducto";
 			this.cmbProducto.Size = new System.Drawing.Size(695, 24);
 			this.cmbProducto.TabIndex = 1;
-			this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
 			// 
 			// label2
 			// 
@@ -78,7 +77,6 @@
 			this.label2.Size = new System.Drawing.Size(73, 16);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Cantidad:";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
 			// numCantidad
 			// 
@@ -121,7 +119,6 @@
 			this.dgvCarrito.RowTemplate.Height = 24;
 			this.dgvCarrito.Size = new System.Drawing.Size(810, 150);
 			this.dgvCarrito.TabIndex = 5;
-			this.dgvCarrito.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellContentClick);
 			// 
 			// colID
 			// 

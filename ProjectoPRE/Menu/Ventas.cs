@@ -142,13 +142,6 @@ namespace ProjectoPRE
                             cmdDetalle.Parameters.AddWithValue("@cant", cant);
                             cmdDetalle.Parameters.AddWithValue("@pre", precio);
                             cmdDetalle.ExecuteNonQuery();
-
-                            // ACTUALIZAR STOCK (El descuento automático)
-                            string sqlStock = "UPDATE Inventario SET stock_producto = stock_producto - @cant WHERE id_producto = @idP";
-                            SQLiteCommand cmdStock = new SQLiteCommand(sqlStock, conexion, transaccion);
-                            cmdStock.Parameters.AddWithValue("@cant", cant);
-                            cmdStock.Parameters.AddWithValue("@idP", idProd);
-                            cmdStock.ExecuteNonQuery();
                         }
 
                         transaccion.Commit();
@@ -165,26 +158,6 @@ namespace ProjectoPRE
                     }
                 }
             }
-        }
-
-        private void dgvCarrito_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Titulo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
