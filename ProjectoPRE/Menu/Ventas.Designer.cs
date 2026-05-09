@@ -73,7 +73,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(463, 223);
+			this.label2.Location = new System.Drawing.Point(463, 197);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(73, 16);
 			this.label2.TabIndex = 2;
@@ -83,7 +83,7 @@
 			// numCantidad
 			// 
 			this.numCantidad.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.numCantidad.Location = new System.Drawing.Point(566, 221);
+			this.numCantidad.Location = new System.Drawing.Point(566, 195);
 			this.numCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.numCantidad.Name = "numCantidad";
 			this.numCantidad.Size = new System.Drawing.Size(120, 22);
@@ -94,7 +94,7 @@
 			this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnAgregar.Location = new System.Drawing.Point(1016, 212);
+			this.btnAgregar.Location = new System.Drawing.Point(1016, 186);
 			this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(145, 39);
@@ -114,12 +114,12 @@
             this.colCantidad,
             this.colPrecio,
             this.colSubtotal});
-			this.dgvCarrito.Location = new System.Drawing.Point(466, 272);
+			this.dgvCarrito.Location = new System.Drawing.Point(421, 248);
 			this.dgvCarrito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.dgvCarrito.Name = "dgvCarrito";
 			this.dgvCarrito.RowHeadersWidth = 51;
 			this.dgvCarrito.RowTemplate.Height = 24;
-			this.dgvCarrito.Size = new System.Drawing.Size(696, 123);
+			this.dgvCarrito.Size = new System.Drawing.Size(810, 150);
 			this.dgvCarrito.TabIndex = 5;
 			this.dgvCarrito.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellContentClick);
 			// 
@@ -164,7 +164,7 @@
 			this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTotal.ForeColor = System.Drawing.Color.Black;
-			this.lblTotal.Location = new System.Drawing.Point(957, 412);
+			this.lblTotal.Location = new System.Drawing.Point(1052, 412);
 			this.lblTotal.Name = "lblTotal";
 			this.lblTotal.Size = new System.Drawing.Size(179, 20);
 			this.lblTotal.TabIndex = 6;
@@ -201,11 +201,11 @@
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(745, 61);
+			this.Titulo.Location = new System.Drawing.Point(729, 55);
 			this.Titulo.Name = "Titulo";
-			this.Titulo.Size = new System.Drawing.Size(143, 22);
+			this.Titulo.Size = new System.Drawing.Size(172, 22);
 			this.Titulo.TabIndex = 11;
-			this.Titulo.Text = "Registrar Venta";
+			this.Titulo.Text = "Registro de Ventas";
 			// 
 			// Ventas
 			// 

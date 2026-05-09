@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
-//Codigos de las consultas, tablas, filtros a la BD realizados con ayuda de IA
+// Codigos de las consultas, tablas, filtros a la BD realizados con ayuda de IA
 
 namespace ProjectoPRE.Menu
 {
@@ -133,6 +133,11 @@ namespace ProjectoPRE.Menu
             AbrirFormularioHijo(new Ventas(rolUsuario));
         }
 
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Historial(rolUsuario));
+        }
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             // 1. Buscamos y eliminamos CUALQUIER formulario que esté en el panel
@@ -189,6 +194,7 @@ namespace ProjectoPRE.Menu
         {
             //Colocar aqui el form de Proveedores
         }
+
     }
 
 }

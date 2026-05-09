@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.panelContenedor = new System.Windows.Forms.Panel();
 			this.chartStock = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.lblTituloDashboard = new System.Windows.Forms.Label();
@@ -40,6 +40,7 @@
 			this.btnVentas = new System.Windows.Forms.Button();
 			this.btnInventario = new System.Windows.Forms.Button();
 			this.btnProveedores = new System.Windows.Forms.Button();
+			this.btnHistorial = new System.Windows.Forms.Button();
 			this.panelContenedor.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chartStock)).BeginInit();
 			this.panelNavegacion.SuspendLayout();
@@ -60,18 +61,18 @@
 			// chartStock
 			// 
 			this.chartStock.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			chartArea2.Name = "ChartArea1";
-			this.chartStock.ChartAreas.Add(chartArea2);
-			legend2.Name = "Legend1";
-			this.chartStock.Legends.Add(legend2);
+			chartArea1.Name = "ChartArea1";
+			this.chartStock.ChartAreas.Add(chartArea1);
+			legend1.Name = "Legend1";
+			this.chartStock.Legends.Add(legend1);
 			this.chartStock.Location = new System.Drawing.Point(404, 101);
 			this.chartStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.chartStock.Name = "chartStock";
 			this.chartStock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-			series2.ChartArea = "ChartArea1";
-			series2.Legend = "Legend1";
-			series2.Name = "Series1";
-			this.chartStock.Series.Add(series2);
+			series1.ChartArea = "ChartArea1";
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			this.chartStock.Series.Add(series1);
 			this.chartStock.Size = new System.Drawing.Size(871, 521);
 			this.chartStock.TabIndex = 3;
 			this.chartStock.Text = "chart1";
@@ -90,6 +91,7 @@
 			// panelNavegacion
 			// 
 			this.panelNavegacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.panelNavegacion.Controls.Add(this.btnHistorial);
 			this.panelNavegacion.Controls.Add(this.PanelN);
 			this.panelNavegacion.Controls.Add(this.btnInicio);
 			this.panelNavegacion.Controls.Add(this.btnInventario);
@@ -130,7 +132,7 @@
 			// 
 			this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnVentas.Location = new System.Drawing.Point(23, 214);
+			this.btnVentas.Location = new System.Drawing.Point(23, 291);
 			this.btnVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnVentas.Name = "btnVentas";
 			this.btnVentas.Size = new System.Drawing.Size(185, 60);
@@ -143,7 +145,7 @@
 			// 
 			this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnInventario.Location = new System.Drawing.Point(23, 302);
+			this.btnInventario.Location = new System.Drawing.Point(23, 208);
 			this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnInventario.Name = "btnInventario";
 			this.btnInventario.Size = new System.Drawing.Size(185, 60);
@@ -156,7 +158,7 @@
 			// 
 			this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnProveedores.Location = new System.Drawing.Point(23, 391);
+			this.btnProveedores.Location = new System.Drawing.Point(23, 455);
 			this.btnProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnProveedores.Name = "btnProveedores";
 			this.btnProveedores.Size = new System.Drawing.Size(185, 60);
@@ -164,6 +166,19 @@
 			this.btnProveedores.Text = "Proveedores";
 			this.btnProveedores.UseVisualStyleBackColor = false;
 			this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+			// 
+			// btnHistorial
+			// 
+			this.btnHistorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnHistorial.Location = new System.Drawing.Point(23, 372);
+			this.btnHistorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnHistorial.Name = "btnHistorial";
+			this.btnHistorial.Size = new System.Drawing.Size(185, 60);
+			this.btnHistorial.TabIndex = 5;
+			this.btnHistorial.Text = "Historial";
+			this.btnHistorial.UseVisualStyleBackColor = false;
+			this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
 			// 
 			// FormHome
 			// 
@@ -196,5 +211,6 @@
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Button btnHistorial;
     }
 }

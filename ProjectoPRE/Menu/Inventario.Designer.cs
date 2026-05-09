@@ -48,6 +48,7 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.LemonChiffon;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(320, 252);
@@ -159,7 +160,7 @@
 			// Titulo
 			// 
 			this.Titulo.AutoSize = true;
-			this.Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+			this.Titulo.BackColor = System.Drawing.Color.Wheat;
 			this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
