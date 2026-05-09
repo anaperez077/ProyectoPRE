@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu\AgregarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\AgregarProveedores.Designer.cs">
+      <DependentUpon>AgregarProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Menu\Historial.cs">
       <SubType>Form</SubType>
@@ -85,6 +91,15 @@
     <Compile Include="Menu\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu\AgregarProveedores.resx">
+      <DependentUpon>AgregarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu\Historial.resx">
       <DependentUpon>Historial.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +126,9 @@
     </Content>
     <EmbeddedResource Include="Menu\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
