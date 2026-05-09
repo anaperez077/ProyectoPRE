@@ -23,28 +23,49 @@ namespace ProjectoPRE.Menu
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
         }
+
+        private void Historial_Load(object sender, EventArgs e)
+        {
+            CargarHistorial();
+        }
+
         public void CargarHistorial()
         {
             using (SQLiteConnection conexion = new SQLiteConnection("Data Source=LibreriaSJ.db;Version=3;"))
             {
-                conexion.Open();
-                string query = @"
-            SELECT 
-                V.id_venta AS 'Ticket #', 
-                P.nombre_producto AS 'Producto', 
-                DV.cantidad AS 'Cant.', 
-                DV.precio_unitario AS 'Precio Unit.',
-                (DV.cantidad * DV.precio_unitario) AS 'Subtotal'
-            FROM Ventas V
-            INNER JOIN Detalle_Ventas DV ON V.id_venta = DV.id_venta
-            INNER JOIN Productos P ON DV.id_producto = P.id_producto
-            ORDER BY V.id_venta DESC"; // Las más recientes primero
+                try
+                {
+                    conexion.Open();
+                    string query = @"
+                SELECT 
+                    V.id_venta AS 'ID Venta', 
+                    P.nombre_producto AS 'Producto', 
+                    DV.cantidad AS 'Cantidad', 
+                    DV.precio AS 'Precio Unit.',
+                    (DV.cantidad * DV.precio) AS 'Sub Total'
+                FROM Ventas V
+                INNER JOIN Detalle_Venta DV ON V.id_venta = DV.id_venta
+                INNER JOIN Productos P ON DV.id_producto = P.id_producto
+                ORDER BY V.id_venta DESC";
 
-                SQLiteDataAdapter da = new SQLiteDataAdapter(query, conexion);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvHistorial.DataSource = dt;
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(query, conexion);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // --- AQUÍ ESTÁ EL TRUCO PARA EVITAR DUPLICADOS ---
+                    dgvHistorial.DataSource = null; // Limpia datos viejos
+                    dgvHistorial.Columns.Clear();    // Borra las columnas vacías que hiciste a mano
+                    dgvHistorial.DataSource = dt;   // Carga las columnas nuevas de la BD
+
+                    // Ajusta el ancho para que se vea profesional
+                    dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar datos: " + ex.Message);
+                }
             }
         }
+
     }
 }
