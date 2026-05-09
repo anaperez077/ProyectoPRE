@@ -18,6 +18,7 @@ namespace ProjectoPRE
             InitializeComponent();
         }
 
+        //Depende el boton que seleccione mandarlo a su version home
         private void btnAdmin_Click_1(object sender, EventArgs e)
         {
             // Pasamos "Admin" al Home

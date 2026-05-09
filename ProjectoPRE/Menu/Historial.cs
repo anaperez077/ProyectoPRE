@@ -13,13 +13,12 @@ namespace ProjectoPRE.Menu
 {
     public partial class Historial : Form
     {
-        private string rolUsuario; // Para saber si es Admin o Empleado
+        // Para saber si es Admin o Empleado
+        private string rolUsuario;
         public Historial(string rol)
         {
             InitializeComponent();
             this.rolUsuario = rol;
-
-            // AGREGA ESTAS DOS LÍNEAS:
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
         }
@@ -52,10 +51,10 @@ namespace ProjectoPRE.Menu
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // --- AQUÍ ESTÁ EL TRUCO PARA EVITAR DUPLICADOS ---
+                    //Evitamos duplicados
                     dgvHistorial.DataSource = null; // Limpia datos viejos
-                    dgvHistorial.Columns.Clear();    // Borra las columnas vacías que hiciste a mano
-                    dgvHistorial.DataSource = dt;   // Carga las columnas nuevas de la BD
+                    dgvHistorial.Columns.Clear();
+                    dgvHistorial.DataSource = dt;// Cargamos las columnas nuevas a la BD
 
                     // Ajusta el ancho para que se vea profesional
                     dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

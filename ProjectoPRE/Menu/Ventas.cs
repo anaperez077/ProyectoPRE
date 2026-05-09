@@ -18,8 +18,6 @@ namespace ProjectoPRE
         {
             InitializeComponent();
             this.rolUsuario = rol;
-
-            // AGREGA ESTAS DOS LÍNEAS:
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
         }
@@ -48,9 +46,10 @@ namespace ProjectoPRE
             }
         }
 
+        //Seccion para agregar nueva venta
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // Validaciones
+            // Validaciones con if
             if (cmbProducto.SelectedIndex == -1 || numCantidad.Value <= 0)
             {
                 MessageBox.Show("Por favor, seleccione un producto y una cantidad válida.");
@@ -76,18 +75,18 @@ namespace ProjectoPRE
                         int stockActual = reader.GetInt32(0);
                         double precioUnitario = reader.GetDouble(1);
 
-                        // 3. Verificar si hay stock suficiente
+                        //Verificar si hay stock suficiente
                         if (cantidadSolicitada > stockActual)
                         {
                             MessageBox.Show($"No hay suficiente stock. Disponible: {stockActual}");
                         }
                         else
                         {
-                            // 4. Calcular subtotal y agregar al DataGridView
+                            //Calcular subtotal y agregar al DataGridView
                             double subtotal = cantidadSolicitada * precioUnitario;
                             dgvCarrito.Rows.Add(idProducto, nombreProducto, cantidadSolicitada, precioUnitario, subtotal);
 
-                            // 5. Actualizar el total general (opcional por ahora)
+                            //Actualizar el total general
                             ActualizarTotal();
                         }
                     }
@@ -105,6 +104,7 @@ namespace ProjectoPRE
             lblTotal.Text = "Total a Pagar: $" + total.ToString("N2");
         }
 
+        //Proceso para finalizar ventas
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             if (dgvCarrito.Rows.Count == 0)
@@ -120,12 +120,12 @@ namespace ProjectoPRE
                 {
                     try
                     {
-                        // 1. Insertar la Venta principal
+                        //Insertar a la tabla "Venta"
                         string sqlVenta = "INSERT INTO Ventas (fecha) VALUES (datetime('now')); SELECT last_insert_rowid();";
                         SQLiteCommand cmdVenta = new SQLiteCommand(sqlVenta, conexion, transaccion);
                         long idVenta = (long)cmdVenta.ExecuteScalar();
 
-                        // 2. Recorrer el DataGridView para insertar detalles y descontar stock
+                        //Recorrer el DataGridView/grafica para insertar detalles y descontar stock
                         foreach (DataGridViewRow fila in dgvCarrito.Rows)
                         {
                             if (fila.Cells[0].Value == null) continue;
@@ -134,7 +134,7 @@ namespace ProjectoPRE
                             int cant = Convert.ToInt32(fila.Cells[2].Value);
                             double precio = Convert.ToDouble(fila.Cells[3].Value);
 
-                            // Insertar en Detalle_Venta
+                            // Insertar en tabla Detalle_Venta
                             string sqlDetalle = "INSERT INTO Detalle_Venta (id_venta, id_producto, cantidad, precio) VALUES (@idV, @idP, @cant, @pre)";
                             SQLiteCommand cmdDetalle = new SQLiteCommand(sqlDetalle, conexion, transaccion);
                             cmdDetalle.Parameters.AddWithValue("@idV", idVenta);
@@ -146,7 +146,6 @@ namespace ProjectoPRE
 
                         transaccion.Commit();
                         MessageBox.Show("¡Venta realizada con éxito! El stock ha sido actualizado.");
-
                         // Limpiar todo para la siguiente venta
                         dgvCarrito.Rows.Clear();
                         ActualizarTotal();

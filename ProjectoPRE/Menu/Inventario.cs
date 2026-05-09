@@ -19,7 +19,7 @@ namespace ProjectoPRE
             InitializeComponent();
             this.rolUsuario = rol;
 
-            // Esto es para que el formulario se adapte al tamaño del hueco derecho
+            //Adaptar el form al diseño del contenedor 
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
         }
@@ -28,28 +28,23 @@ namespace ProjectoPRE
         {
             CargarInventarioCompleto();
 
-            //Bucle para filtrar acciones segun el perfil
+            //Bucle if para filtrar acciones segun el perfil
             if (rolUsuario == "Empleado")
             {
-                // 1. Ocultamos los botones de acción
+                //Ocultamos los botones de acción para empleado
                 btnAgregar.Visible = false;
                 btnEditar.Visible = false;
                 btnEliminar.Visible = false;
 
-                // 2. Ocultamos los cuadros de texto y sus etiquetas (Labels)
-                
+                //Ocultamos los cuadros de texto y sus etiquetas (Labels)
                 txtNombre.Visible = false;
                 txtDescripcion.Visible = false;
                 txtStock.Visible = false;
                 txtPrecio.Visible = false;
-
                 Producto.Visible = false; 
                 precio.Visible = false;
                 Descripcion.Visible = false;
-                Stock.Visible = false;
-
-                //dataGridView1.Location = new Point(150, 130); 
-                //dataGridView1.Size = new Size(750, 400);   
+                Stock.Visible = false; 
             }
         }
 
@@ -101,7 +96,7 @@ namespace ProjectoPRE
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificamos que no hayamos tocado el encabezado
+            // Verificamos que no hayamos tocado el encabezado con un if
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
@@ -118,18 +113,18 @@ namespace ProjectoPRE
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-
+            //Vacio
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-        //CODIGO CON AYUDA DE IA
-        //Seccion de agregar codigo funcional
+
+        //CODIGO DE CONSULTAS A LA BD CON AYUDA DE IA
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            // 1. Verificamos que los campos no estén vacíos
+            //Verificamos que los campos no estén vacíos
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtStock.Text) || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor, complete los campos obligatorios (Nombre, Stock y Precio).", "Advertencia");
@@ -146,16 +141,16 @@ namespace ProjectoPRE
                     {
                         try
                         {
-                            // PASO A: Insertar en la tabla Productos
+                            //Insertar en la tabla Productos
                             string sqlProducto = "INSERT INTO Productos (nombre_producto, descripcion_producto) VALUES (@nom, @desc); SELECT last_insert_rowid();";
                             SQLiteCommand cmdP = new SQLiteCommand(sqlProducto, conexion);
                             cmdP.Parameters.AddWithValue("@nom", txtNombre.Text);
                             cmdP.Parameters.AddWithValue("@desc", txtDescripcion.Text);
 
-                            // Ejecutamos y obtenemos el ID que la base de datos le asignó al producto
+                            //Ejecutamos y obtenemos el ID que la base de datos le asignó al producto
                             long nuevoId = (long)cmdP.ExecuteScalar();
 
-                            // PASO B: Insertar en la tabla Inventario usando ese ID
+                            //Insertamos en la tabla Inventario usando ese ID
                             string sqlInventario = "INSERT INTO Inventario (id_producto, stock_producto, precio_producto) VALUES (@id, @stock, @precio)";
                             SQLiteCommand cmdI = new SQLiteCommand(sqlInventario, conexion);
                             cmdI.Parameters.AddWithValue("@id", nuevoId);
@@ -163,12 +158,12 @@ namespace ProjectoPRE
                             cmdI.Parameters.AddWithValue("@precio", double.Parse(txtPrecio.Text));
                             cmdI.ExecuteNonQuery();
 
-                            // Si llegamos aquí sin errores, confirmamos los cambios
+                            //Confirmamos los cambios
                             transaccion.Commit();
 
                             MessageBox.Show("Producto guardado correctamente en el Inventario", "Éxito");
 
-                            // Limpiamos los cuadros de texto y refrescamos la tabla visual
+                            //Limpiamos los cuadros de texto y refrescamos la tabla visual
                             LimpiarControles();
                             CargarInventarioCompleto();
                         }
@@ -248,7 +243,7 @@ namespace ProjectoPRE
                             cmd2.ExecuteNonQuery();
 
                             trans.Commit();
-                            MessageBox.Show("Producto actualizado correctamente");
+                            MessageBox.Show("Producto actualizado correctamente");//Confirmamos
                             CargarInventarioCompleto();
                             LimpiarControles();
                         }
@@ -277,7 +272,7 @@ namespace ProjectoPRE
                 using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    // Consulta SQL corregida
+                    // Consulta SQL
                     string query = @"SELECT 
                                 P.id_producto AS [ID Producto], 
                                 P.nombre_producto AS [Nombre], 
@@ -291,8 +286,6 @@ namespace ProjectoPRE
 
                     SQLiteDataAdapter da = new SQLiteDataAdapter(query, conexion);
 
-                    // ¡OJO AQUÍ! El "@filtro" debe coincidir con lo que escribiste en el query
-                    // Y "textoABuscar" debe ser igual al nombre que pusiste arriba en el paréntesis
                     da.SelectCommand.Parameters.AddWithValue("@filtro", "%" + textoABuscar + "%");
 
                     DataTable dt = new DataTable();
@@ -306,7 +299,5 @@ namespace ProjectoPRE
             }
         }
     }
-   
-
 }
 

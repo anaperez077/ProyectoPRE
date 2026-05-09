@@ -23,7 +23,7 @@ namespace ProjectoPRE.Menu
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
-            // Aseguramos que los controles iniciales estén DENTRO del panel al empezar
+            // Aseguramos que los controles iniciales esten en panel al empezar con ayuda de un IF
             if (!panelContenedor.Controls.Contains(chartStock))
             {
                 panelContenedor.Controls.Add(chartStock);
@@ -33,7 +33,7 @@ namespace ProjectoPRE.Menu
             ConfigurarDashboard();
         }
 
-        // Creamos este método para mostrar home segun perfil
+        // Creamos este método para mostrar home segun perfil usando if-else
         private void ConfigurarDashboard()
         {
             chartStock.Series["Series1"].Points.Clear();
@@ -110,7 +110,7 @@ namespace ProjectoPRE.Menu
 
                     while (dr.Read())
                     {
-                        // Agregamos Nombre al eje X y Stock al eje Y
+                        // Agregamos Nombre al eje X y Stock al eje Y, dentro del while
                         chartStock.Series["Series1"].Points.AddXY(dr["nombre_producto"].ToString(), dr["stock_producto"]);
                     }
                 }
@@ -140,7 +140,7 @@ namespace ProjectoPRE.Menu
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            // 1. Buscamos y eliminamos CUALQUIER formulario que esté en el panel
+            // Buscamos y eliminamos algun formulario que esté en el panel
             // Usamos un ciclo for inverso para evitar errores de colección
             for (int i = panelContenedor.Controls.Count - 1; i >= 0; i--)
             {
@@ -150,27 +150,27 @@ namespace ProjectoPRE.Menu
                 }
             }
 
-            // 2. Limpiamos títulos viejos para que no se amontonen con los nuevos
+            //Limpiamos títulos viejos para que no se amontonen con los nuevos
             chartStock.Titles.Clear();
 
-            // 3. Hacemos visibles los controles base
+            //Hacemos visibles los controles base
             chartStock.Visible = true;
             lblTituloDashboard.Visible = true;
 
-            // Forzamos que se pongan al frente por si quedaron atrás
+            //Ponerlos enfrente
             chartStock.BringToFront();
             lblTituloDashboard.BringToFront();
 
-            // 4. Refrescamos datos
+            //Refrescamos datos
             ConfigurarDashboard();
         }
         private void AbrirFormularioHijo(Form formularioHijo)
         {
-            // 1. Ocultamos la gráfica y el título en lugar de borrarlos
+            //Ocultamos la gráfica y el título en lugar de borrarlos
             chartStock.Visible = false;
             lblTituloDashboard.Visible = false;
 
-            // 2. Si ya hay OTRO formulario abierto (ej. abres Ventas estando en Inventario), ese sí lo quitamos
+            //Si ya hay formulario abierto lo quitamos con un foreach 
             foreach (Control control in panelContenedor.Controls)
             {
                 if (control is Form)
@@ -180,7 +180,7 @@ namespace ProjectoPRE.Menu
                 }
             }
 
-            // 3. Configuramos y mostramos el nuevo formulario
+            //Configuramos y mostramos el nuevo formulario
             formularioHijo.TopLevel = false;
             formularioHijo.FormBorderStyle = FormBorderStyle.None;
             formularioHijo.Dock = DockStyle.Fill;
