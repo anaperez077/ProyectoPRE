@@ -49,6 +49,16 @@ namespace ProjectoPRE
         private void Proveedores_Load(object sender, EventArgs e)
         {
             CargarDatos();
+
+            // Si el usuario es "Cliente" (o como se llame tu rol), ocultamos botones
+            if (rolUsuario == "Cliente")
+            {
+                btnAgregar.Visible = false;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+
+                // El tbox_buscar y el dataGridView1 se quedan visibles para que puedan "Buscar y Ver"
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -61,26 +71,19 @@ namespace ProjectoPRE
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow == null)
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.IsNewRow)
             {
-                MessageBox.Show("Por favor, seleccione al proveedores que desea editar.");
+                MessageBox.Show("Por favor, seleccione al proveedor que desea editar.");
                 return;
             }
 
-            AgregarProveedores frm = new AgregarProveedores(rolUsuario); //instancia del form2
+            AgregarProveedores frm = new AgregarProveedores(rolUsuario);
 
+            // Pasamos los datos usando las variables públicas (Igual que en Inventario)
             frm.idSeleccionado = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            frm.NombreProveedor = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            frm.TelefonoProveedor = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
-            //llenando textbox directamente
-
-            frm.textBox3.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString(); // ID
-            frm.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString(); // Nombre
-            frm.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString(); // Teléfono
-
-            //bloqueo de ID para que no sea editado
-            frm.textBox3.Enabled = false;
-
-            //mostrando el form
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 CargarDatos();
@@ -149,31 +152,26 @@ namespace ProjectoPRE
         private void tbox_buscar_TextChanged(object sender, EventArgs e)
         {
             string cadenaConexion = "Data Source=LibreriaSJ.db;Version=3;";
+            // Buscamos por nombre
+            string query = "SELECT id_proveedor, nombre_proveedor, telefono_proveedor FROM Proveedores WHERE nombre_proveedor LIKE @buscar";
 
-            string query = "SELECT id_proveedor, nombre_proveedor, telefono_proveedor " +
-                   "FROM Proveedores WHERE nombre_proveedor LIKE @buscar";
-
-            using (var conexion = new System.Data.SQLite.SQLiteConnection(cadenaConexion))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
                 try
                 {
                     conexion.Open();
-                    using (var comando = new System.Data.SQLite.SQLiteCommand(query, conexion))
+                    using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
                     {
-                        // El % al inicio y al final permite buscar "Flores" aunque solo escribas "Flor"
                         comando.Parameters.AddWithValue("@buscar", "%" + tbox_buscar.Text + "%");
-
-                        System.Data.DataTable dt = new System.Data.DataTable();
-                        System.Data.SQLite.SQLiteDataAdapter da = new System.Data.SQLite.SQLiteDataAdapter(comando);
+                        DataTable dt = new DataTable();
+                        SQLiteDataAdapter da = new SQLiteDataAdapter(comando);
                         da.Fill(dt);
-                        dataGridView1.DataSource = dt; // Actualizamos la tabla con el filtro
+                        dataGridView1.DataSource = dt;
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al buscar: " + ex.Message);
-                }
+                catch (Exception ex) { /* Silencioso para no molestar mientras escriben */ }
             }
         }
     }
-}
+ }
+ 

@@ -26,20 +26,25 @@ namespace ProjectoPRE
         {
             InitializeComponent();
             this.rolUsuario = rol;
-
-            //Adaptar el form al diseño del contenedor 
-            this.TopLevel = false;
-            this.Dock = DockStyle.Fill;
         }
 
         private void proveedoresAgregar_Load(object sender, EventArgs e)
         {
-            //si el ID no es nulo, entonces se esta editando
-            if (!string.IsNullOrEmpty(IdProveedor))
+            // Si hay un ID seleccionado, estamos editando
+            if (!string.IsNullOrEmpty(idSeleccionado))
             {
                 textBox1.Text = NombreProveedor;
                 textBox2.Text = TelefonoProveedor;
-                btnagregar2.Text = "Actualizar"; //se cambia texto del boton
+                textBox3.Text = idSeleccionado;
+                textBox3.Enabled = false; // El ID no se toca porque es de la BD
+                btnagregar2.Text = "Actualizar";
+            }
+            else
+            {
+                // Si es nuevo, limpiamos y bloqueamos el ID (la BD lo pondrá sola)
+                textBox3.Text = "AUTO";
+                textBox3.Enabled = false;
+                btnagregar2.Text = "Guardar";
             }
         }
 
@@ -52,9 +57,9 @@ namespace ProjectoPRE
 
         private void btnagregar2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
             {
-                MessageBox.Show("Por favor, completa todos los campos antes de continuar.");
+                MessageBox.Show("Por favor, completa Nombre y Teléfono.");
                 return;
             }
 
@@ -63,13 +68,12 @@ namespace ProjectoPRE
 
             if (string.IsNullOrEmpty(idSeleccionado))
             {
-                // Si no hay ID, es un nuevo registro
-                query = "INSERT INTO Proveedores (id_proveedor, nombre_proveedor, telefono_proveedor) VALUES (@id, @nombre, @telefono)";
+                // INSERT sin el ID (porque es AUTOINCREMENT en tu BD)
+                query = "INSERT INTO Proveedores (nombre_proveedor, telefono_proveedor) VALUES (@nombre, @telefono)";
             }
-
             else
             {
-                // Si hay ID, es una edición (Solo cambiamos nombre y teléfono del que ya existe)
+                // UPDATE usando el ID que ya tenemos
                 query = "UPDATE Proveedores SET nombre_proveedor = @nombre, telefono_proveedor = @telefono WHERE id_proveedor = @id";
             }
 
@@ -80,26 +84,26 @@ namespace ProjectoPRE
                     conexion.Open();
                     using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
                     {
-                        // vinculacion de los parámetros 
-                        comando.Parameters.AddWithValue("@id", textBox3.Text); // ID
-                        comando.Parameters.AddWithValue("@nombre", textBox1.Text); // Nombre
-                        comando.Parameters.AddWithValue("@telefono", textBox2.Text); // Teléfono
+                        comando.Parameters.AddWithValue("@nombre", textBox1.Text);
+                        comando.Parameters.AddWithValue("@telefono", textBox2.Text);
+
+                        if (!string.IsNullOrEmpty(idSeleccionado))
+                        {
+                            comando.Parameters.AddWithValue("@id", idSeleccionado);
+                        }
 
                         comando.ExecuteNonQuery();
                     }
                 }
 
-                string msj = string.IsNullOrEmpty(idSeleccionado) ? "agregado" : "actualizado";
-                MessageBox.Show($"Proveedor {msj} con éxito.");
-
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("¡Operación realizada con éxito!");
+                this.DialogResult = DialogResult.OK; // ESTO ES LO QUE HACE QUE EL FORM ANTERIOR SE ACTUALICE
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
-
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
