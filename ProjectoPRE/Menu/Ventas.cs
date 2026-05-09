@@ -181,5 +181,10 @@ namespace ProjectoPRE
         {
 
         }
+
+        private void Titulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

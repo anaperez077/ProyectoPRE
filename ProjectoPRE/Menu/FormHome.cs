@@ -124,7 +124,6 @@ namespace ProjectoPRE.Menu
         //Al hacer click en los botones abrir sus forms correspondientes
         private void btnInventario_Click(object sender, EventArgs e)
         {
-
             AbrirFormularioHijo(new Inventario(rolUsuario));
         }
 
@@ -132,16 +131,6 @@ namespace ProjectoPRE.Menu
         {
 
             AbrirFormularioHijo(new Ventas(rolUsuario));
-        }
-
-        private void lblTituloDashboard_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chartStock_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -199,11 +188,6 @@ namespace ProjectoPRE.Menu
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             //Colocar aqui el form de Proveedores
-        }
-
-        private void panelNavegacion_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 
