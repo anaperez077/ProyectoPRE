@@ -173,7 +173,7 @@
 			// 
 			this.Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.Titulo.AutoSize = true;
-			this.Titulo.BackColor = System.Drawing.Color.Wheat;
+			this.Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,7 +221,7 @@
 			// txtBuscar
 			// 
 			this.txtBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.txtBuscar.BackColor = System.Drawing.Color.White;
 			this.txtBuscar.Location = new System.Drawing.Point(621, 115);
 			this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.txtBuscar.Name = "txtBuscar";
@@ -245,7 +245,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1382, 653);
 			this.Controls.Add(this.Buscar);
 			this.Controls.Add(this.txtBuscar);

@@ -156,12 +156,12 @@
 			// 
 			this.Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.Titulo.AutoSize = true;
-			this.Titulo.BackColor = System.Drawing.Color.Wheat;
+			this.Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(738, 78);
+			this.Titulo.Location = new System.Drawing.Point(714, 78);
 			this.Titulo.Name = "Titulo";
 			this.Titulo.Size = new System.Drawing.Size(246, 22);
 			this.Titulo.TabIndex = 11;
