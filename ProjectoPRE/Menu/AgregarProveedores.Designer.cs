@@ -37,6 +37,8 @@
 			this.btnagregar2 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnRegresar
@@ -130,12 +132,24 @@
 			this.textBox3.Size = new System.Drawing.Size(246, 22);
 			this.textBox3.TabIndex = 8;
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.Image = global::ProjectoPRE.Properties.Resources.Logo;
+			this.pictureBox1.Location = new System.Drawing.Point(702, 373);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(75, 75);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 9;
+			this.pictureBox1.TabStop = false;
+			// 
 			// AgregarProveedores
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(782, 453);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnagregar2);
@@ -149,6 +163,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AgregarProveedores";
 			this.Load += new System.EventHandler(this.proveedoresAgregar_Load);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -165,5 +180,6 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

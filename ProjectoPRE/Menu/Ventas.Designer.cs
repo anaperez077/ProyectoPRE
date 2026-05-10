@@ -43,8 +43,10 @@
 			this.btnFinalizar = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Titulo = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblProducto
@@ -53,7 +55,7 @@
 			this.lblProducto.AutoSize = true;
 			this.lblProducto.BackColor = System.Drawing.Color.Transparent;
 			this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblProducto.Location = new System.Drawing.Point(712, 104);
+			this.lblProducto.Location = new System.Drawing.Point(737, 104);
 			this.lblProducto.Name = "lblProducto";
 			this.lblProducto.Size = new System.Drawing.Size(223, 25);
 			this.lblProducto.TabIndex = 0;
@@ -65,7 +67,7 @@
 			this.cmbProducto.BackColor = System.Drawing.Color.White;
 			this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbProducto.FormattingEnabled = true;
-			this.cmbProducto.Location = new System.Drawing.Point(466, 144);
+			this.cmbProducto.Location = new System.Drawing.Point(491, 144);
 			this.cmbProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.cmbProducto.Name = "cmbProducto";
 			this.cmbProducto.Size = new System.Drawing.Size(695, 26);
@@ -76,7 +78,7 @@
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(463, 197);
+			this.label2.Location = new System.Drawing.Point(488, 197);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(79, 18);
 			this.label2.TabIndex = 2;
@@ -86,7 +88,7 @@
 			// 
 			this.numCantidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.numCantidad.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.numCantidad.Location = new System.Drawing.Point(566, 195);
+			this.numCantidad.Location = new System.Drawing.Point(591, 195);
 			this.numCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.numCantidad.Name = "numCantidad";
 			this.numCantidad.Size = new System.Drawing.Size(120, 22);
@@ -99,7 +101,7 @@
 			this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnAgregar.Location = new System.Drawing.Point(1016, 186);
+			this.btnAgregar.Location = new System.Drawing.Point(1041, 186);
 			this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(145, 39);
@@ -122,7 +124,7 @@
             this.colCantidad,
             this.colPrecio,
             this.colSubtotal});
-			this.dgvCarrito.Location = new System.Drawing.Point(376, 253);
+			this.dgvCarrito.Location = new System.Drawing.Point(401, 253);
 			this.dgvCarrito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.dgvCarrito.Name = "dgvCarrito";
 			this.dgvCarrito.RowHeadersWidth = 51;
@@ -172,7 +174,7 @@
 			this.lblTotal.BackColor = System.Drawing.Color.Transparent;
 			this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTotal.ForeColor = System.Drawing.Color.Black;
-			this.lblTotal.Location = new System.Drawing.Point(1033, 418);
+			this.lblTotal.Location = new System.Drawing.Point(1054, 418);
 			this.lblTotal.Name = "lblTotal";
 			this.lblTotal.Size = new System.Drawing.Size(209, 25);
 			this.lblTotal.TabIndex = 6;
@@ -185,7 +187,7 @@
 			this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnFinalizar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnFinalizar.Location = new System.Drawing.Point(717, 466);
+			this.btnFinalizar.Location = new System.Drawing.Point(742, 466);
 			this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnFinalizar.Name = "btnFinalizar";
 			this.btnFinalizar.Size = new System.Drawing.Size(193, 54);
@@ -197,7 +199,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(563, 36);
+			this.label1.Location = new System.Drawing.Point(588, 36);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(0, 16);
 			this.label1.TabIndex = 8;
@@ -211,11 +213,22 @@
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(729, 55);
+			this.Titulo.Location = new System.Drawing.Point(754, 55);
 			this.Titulo.Name = "Titulo";
 			this.Titulo.Size = new System.Drawing.Size(172, 22);
 			this.Titulo.TabIndex = 11;
 			this.Titulo.Text = "Registro de Ventas";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.Image = global::ProjectoPRE.Properties.Resources.Logo;
+			this.pictureBox1.Location = new System.Drawing.Point(1277, 548);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 12;
+			this.pictureBox1.TabStop = false;
 			// 
 			// Ventas
 			// 
@@ -223,6 +236,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1382, 653);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.Titulo);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnFinalizar);
@@ -240,6 +254,7 @@
 			this.Load += new System.EventHandler(this.Ventas_Load);
 			((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -262,5 +277,6 @@
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Titulo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

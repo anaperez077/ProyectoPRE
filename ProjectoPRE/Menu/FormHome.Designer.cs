@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.panelContenedor = new System.Windows.Forms.Panel();
 			this.chartStock = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.lblTituloDashboard = new System.Windows.Forms.Label();
 			this.panelNavegacion = new System.Windows.Forms.Panel();
+			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnHistorial = new System.Windows.Forms.Button();
 			this.PanelN = new System.Windows.Forms.Label();
-			this.btnInicio = new System.Windows.Forms.Button();
-			this.btnInventario = new System.Windows.Forms.Button();
 			this.btnVentas = new System.Windows.Forms.Button();
 			this.btnProveedores = new System.Windows.Forms.Button();
-			this.btnSalir = new System.Windows.Forms.Button();
+			this.btnInventario = new System.Windows.Forms.Button();
+			this.btnInicio = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panelContenedor.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chartStock)).BeginInit();
 			this.panelNavegacion.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelContenedor
 			// 
 			this.panelContenedor.BackColor = System.Drawing.Color.Wheat;
+			this.panelContenedor.Controls.Add(this.pictureBox1);
 			this.panelContenedor.Controls.Add(this.chartStock);
 			this.panelContenedor.Controls.Add(this.lblTituloDashboard);
 			this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -65,18 +68,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.chartStock.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			chartArea4.Name = "ChartArea1";
-			this.chartStock.ChartAreas.Add(chartArea4);
-			legend4.Name = "Legend1";
-			this.chartStock.Legends.Add(legend4);
-			this.chartStock.Location = new System.Drawing.Point(404, 108);
+			chartArea2.Name = "ChartArea1";
+			this.chartStock.ChartAreas.Add(chartArea2);
+			legend2.Name = "Legend1";
+			this.chartStock.Legends.Add(legend2);
+			this.chartStock.Location = new System.Drawing.Point(377, 96);
 			this.chartStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.chartStock.Name = "chartStock";
 			this.chartStock.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-			series4.ChartArea = "ChartArea1";
-			series4.Legend = "Legend1";
-			series4.Name = "Series1";
-			this.chartStock.Series.Add(series4);
+			series2.ChartArea = "ChartArea1";
+			series2.Legend = "Legend1";
+			series2.Name = "Series1";
+			this.chartStock.Series.Add(series2);
 			this.chartStock.Size = new System.Drawing.Size(871, 498);
 			this.chartStock.TabIndex = 3;
 			this.chartStock.Text = "chart1";
@@ -87,7 +90,7 @@
 			this.lblTituloDashboard.AutoSize = true;
 			this.lblTituloDashboard.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTituloDashboard.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.lblTituloDashboard.Location = new System.Drawing.Point(618, 36);
+			this.lblTituloDashboard.Location = new System.Drawing.Point(591, 24);
 			this.lblTituloDashboard.Name = "lblTituloDashboard";
 			this.lblTituloDashboard.Size = new System.Drawing.Size(426, 39);
 			this.lblTituloDashboard.TabIndex = 2;
@@ -110,6 +113,20 @@
 			this.panelNavegacion.Name = "panelNavegacion";
 			this.panelNavegacion.Size = new System.Drawing.Size(304, 653);
 			this.panelNavegacion.TabIndex = 4;
+			// 
+			// btnSalir
+			// 
+			this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSalir.Location = new System.Drawing.Point(48, 544);
+			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnSalir.Name = "btnSalir";
+			this.btnSalir.Size = new System.Drawing.Size(202, 66);
+			this.btnSalir.TabIndex = 6;
+			this.btnSalir.Text = "Salir";
+			this.btnSalir.UseVisualStyleBackColor = false;
+			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 			// 
 			// btnHistorial
 			// 
@@ -135,32 +152,6 @@
 			this.PanelN.Size = new System.Drawing.Size(232, 29);
 			this.PanelN.TabIndex = 3;
 			this.PanelN.Text = "Panel de navegacion";
-			// 
-			// btnInicio
-			// 
-			this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnInicio.Location = new System.Drawing.Point(48, 120);
-			this.btnInicio.Margin = new System.Windows.Forms.Padding(4);
-			this.btnInicio.Name = "btnInicio";
-			this.btnInicio.Size = new System.Drawing.Size(202, 66);
-			this.btnInicio.TabIndex = 4;
-			this.btnInicio.Text = "Home";
-			this.btnInicio.UseVisualStyleBackColor = false;
-			this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-			// 
-			// btnInventario
-			// 
-			this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnInventario.Location = new System.Drawing.Point(48, 204);
-			this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnInventario.Name = "btnInventario";
-			this.btnInventario.Size = new System.Drawing.Size(202, 66);
-			this.btnInventario.TabIndex = 0;
-			this.btnInventario.Text = "Inventario";
-			this.btnInventario.UseVisualStyleBackColor = false;
-			this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
 			// 
 			// btnVentas
 			// 
@@ -188,19 +179,42 @@
 			this.btnProveedores.UseVisualStyleBackColor = false;
 			this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
 			// 
-			// btnSalir
+			// btnInventario
 			// 
-			this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSalir.Location = new System.Drawing.Point(48, 544);
-			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnSalir.Name = "btnSalir";
-			this.btnSalir.Size = new System.Drawing.Size(202, 66);
-			this.btnSalir.TabIndex = 6;
-			this.btnSalir.Text = "Salir";
-			this.btnSalir.UseVisualStyleBackColor = false;
-			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+			this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnInventario.Location = new System.Drawing.Point(48, 204);
+			this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnInventario.Name = "btnInventario";
+			this.btnInventario.Size = new System.Drawing.Size(202, 66);
+			this.btnInventario.TabIndex = 0;
+			this.btnInventario.Text = "Inventario";
+			this.btnInventario.UseVisualStyleBackColor = false;
+			this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+			// 
+			// btnInicio
+			// 
+			this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnInicio.Location = new System.Drawing.Point(48, 120);
+			this.btnInicio.Margin = new System.Windows.Forms.Padding(4);
+			this.btnInicio.Name = "btnInicio";
+			this.btnInicio.Size = new System.Drawing.Size(202, 66);
+			this.btnInicio.TabIndex = 4;
+			this.btnInicio.Text = "Home";
+			this.btnInicio.UseVisualStyleBackColor = false;
+			this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.Image = global::ProjectoPRE.Properties.Resources.Logo;
+			this.pictureBox1.Location = new System.Drawing.Point(1277, 548);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
 			// 
 			// FormHome
 			// 
@@ -221,6 +235,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.chartStock)).EndInit();
 			this.panelNavegacion.ResumeLayout(false);
 			this.panelNavegacion.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -237,5 +252,6 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnHistorial;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

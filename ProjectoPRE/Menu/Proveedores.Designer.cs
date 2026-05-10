@@ -38,7 +38,9 @@
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.Titulo = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
@@ -167,12 +169,24 @@
 			this.Titulo.TabIndex = 11;
 			this.Titulo.Text = "Información de Proveedores";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.Image = global::ProjectoPRE.Properties.Resources.Logo;
+			this.pictureBox1.Location = new System.Drawing.Point(1277, 548);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 12;
+			this.pictureBox1.TabStop = false;
+			// 
 			// Proveedores
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1382, 653);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.Titulo);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnEliminar);
@@ -185,6 +199,7 @@
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Proveedores_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -201,5 +216,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Titulo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

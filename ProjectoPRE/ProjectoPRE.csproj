@@ -99,6 +99,7 @@
     <Compile Include="Menu\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\Logo.jpeg" />
     <EmbeddedResource Include="Menu\AgregarProveedores.resx">
       <DependentUpon>AgregarProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="LibreriaSJ.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

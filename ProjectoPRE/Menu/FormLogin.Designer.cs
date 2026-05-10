@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAdmin = new System.Windows.Forms.Button();
 			this.btnEmpleado = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -41,7 +44,7 @@
 			this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.label1.Location = new System.Drawing.Point(556, 124);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(257, 44);
+			this.label1.Size = new System.Drawing.Size(250, 43);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Escoja su perfil";
 			// 
@@ -77,12 +80,25 @@
 			this.btnEmpleado.UseVisualStyleBackColor = false;
 			this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click_1);
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.ErrorImage = null;
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.InitialImage = null;
+			this.pictureBox1.Location = new System.Drawing.Point(1275, 546);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 3;
+			this.pictureBox1.TabStop = false;
+			// 
 			// FormLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Wheat;
 			this.ClientSize = new System.Drawing.Size(1382, 653);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.btnEmpleado);
 			this.Controls.Add(this.btnAdmin);
 			this.Controls.Add(this.label1);
@@ -90,6 +106,7 @@
 			this.Name = "FormLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -100,5 +117,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnEmpleado;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

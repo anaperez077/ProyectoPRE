@@ -36,7 +36,9 @@
 			this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Titulo = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvHistorial
@@ -53,11 +55,11 @@
             this.colCantidad,
             this.colPrecio,
             this.colSubtotal});
-			this.dgvHistorial.Location = new System.Drawing.Point(408, 152);
+			this.dgvHistorial.Location = new System.Drawing.Point(412, 152);
 			this.dgvHistorial.Name = "dgvHistorial";
 			this.dgvHistorial.RowHeadersWidth = 51;
 			this.dgvHistorial.RowTemplate.Height = 24;
-			this.dgvHistorial.Size = new System.Drawing.Size(858, 404);
+			this.dgvHistorial.Size = new System.Drawing.Size(858, 318);
 			this.dgvHistorial.TabIndex = 0;
 			// 
 			// colIdVenta
@@ -104,7 +106,7 @@
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(737, 70);
+			this.Titulo.Location = new System.Drawing.Point(732, 70);
 			this.Titulo.Name = "Titulo";
 			this.Titulo.Size = new System.Drawing.Size(182, 24);
 			this.Titulo.TabIndex = 11;
@@ -120,12 +122,24 @@
 			this.label1.Size = new System.Drawing.Size(0, 16);
 			this.label1.TabIndex = 12;
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox1.Image = global::ProjectoPRE.Properties.Resources.Logo;
+			this.pictureBox1.Location = new System.Drawing.Point(1277, 548);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 13;
+			this.pictureBox1.TabStop = false;
+			// 
 			// Historial
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1382, 653);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.Titulo);
 			this.Controls.Add(this.dgvHistorial);
@@ -134,6 +148,7 @@
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Historial_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -149,5 +164,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotal;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
