@@ -41,6 +41,9 @@
 			// 
 			// dgvHistorial
 			// 
+			this.dgvHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvHistorial.BackgroundColor = System.Drawing.Color.LemonChiffon;
 			this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -50,11 +53,11 @@
             this.colCantidad,
             this.colPrecio,
             this.colSubtotal});
-			this.dgvHistorial.Location = new System.Drawing.Point(449, 111);
+			this.dgvHistorial.Location = new System.Drawing.Point(408, 152);
 			this.dgvHistorial.Name = "dgvHistorial";
 			this.dgvHistorial.RowHeadersWidth = 51;
 			this.dgvHistorial.RowTemplate.Height = 24;
-			this.dgvHistorial.Size = new System.Drawing.Size(814, 515);
+			this.dgvHistorial.Size = new System.Drawing.Size(858, 404);
 			this.dgvHistorial.TabIndex = 0;
 			// 
 			// colIdVenta
@@ -94,15 +97,16 @@
 			// 
 			// Titulo
 			// 
+			this.Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.Titulo.AutoSize = true;
 			this.Titulo.BackColor = System.Drawing.Color.Wheat;
 			this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(768, 52);
+			this.Titulo.Location = new System.Drawing.Point(734, 70);
 			this.Titulo.Name = "Titulo";
-			this.Titulo.Size = new System.Drawing.Size(173, 22);
+			this.Titulo.Size = new System.Drawing.Size(182, 24);
 			this.Titulo.TabIndex = 11;
 			this.Titulo.Text = "Historial de Ventas";
 			// 
@@ -127,6 +131,7 @@
 			this.Controls.Add(this.dgvHistorial);
 			this.Name = "Historial";
 			this.Text = "Historial";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Historial_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
 			this.ResumeLayout(false);

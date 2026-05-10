@@ -45,7 +45,7 @@
 			this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnRegresar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnRegresar.Location = new System.Drawing.Point(704, 112);
+			this.btnRegresar.Location = new System.Drawing.Point(71, 39);
 			this.btnRegresar.Name = "btnRegresar";
 			this.btnRegresar.Size = new System.Drawing.Size(91, 35);
 			this.btnRegresar.TabIndex = 0;
@@ -57,7 +57,7 @@
 			// 
 			this.lbltitulof2.AutoSize = true;
 			this.lbltitulof2.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbltitulof2.Location = new System.Drawing.Point(859, 159);
+			this.lbltitulof2.Location = new System.Drawing.Point(249, 95);
 			this.lbltitulof2.Name = "lbltitulof2";
 			this.lbltitulof2.Size = new System.Drawing.Size(289, 33);
 			this.lbltitulof2.TabIndex = 1;
@@ -67,7 +67,7 @@
 			// 
 			this.lblnombre.AutoSize = true;
 			this.lblnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblnombre.Location = new System.Drawing.Point(810, 302);
+			this.lblnombre.Location = new System.Drawing.Point(177, 229);
 			this.lblnombre.Name = "lblnombre";
 			this.lblnombre.Size = new System.Drawing.Size(168, 16);
 			this.lblnombre.TabIndex = 2;
@@ -77,7 +77,7 @@
 			// 
 			this.lbltelefono.AutoSize = true;
 			this.lbltelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbltelefono.Location = new System.Drawing.Point(810, 351);
+			this.lbltelefono.Location = new System.Drawing.Point(177, 278);
 			this.lbltelefono.Name = "lbltelefono";
 			this.lbltelefono.Size = new System.Drawing.Size(149, 16);
 			this.lbltelefono.TabIndex = 3;
@@ -85,17 +85,17 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(1026, 296);
+			this.textBox1.Location = new System.Drawing.Point(393, 223);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(122, 22);
+			this.textBox1.Size = new System.Drawing.Size(246, 22);
 			this.textBox1.TabIndex = 4;
 			this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(1026, 345);
+			this.textBox2.Location = new System.Drawing.Point(393, 272);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(122, 22);
+			this.textBox2.Size = new System.Drawing.Size(246, 22);
 			this.textBox2.TabIndex = 5;
 			this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
 			// 
@@ -105,7 +105,7 @@
 			this.btnagregar2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnagregar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnagregar2.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnagregar2.Location = new System.Drawing.Point(921, 416);
+			this.btnagregar2.Location = new System.Drawing.Point(321, 340);
 			this.btnagregar2.Name = "btnagregar2";
 			this.btnagregar2.Size = new System.Drawing.Size(124, 46);
 			this.btnagregar2.TabIndex = 6;
@@ -117,7 +117,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(810, 256);
+			this.label1.Location = new System.Drawing.Point(177, 183);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(128, 16);
 			this.label1.TabIndex = 7;
@@ -125,9 +125,9 @@
 			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(1026, 250);
+			this.textBox3.Location = new System.Drawing.Point(393, 177);
 			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(122, 22);
+			this.textBox3.Size = new System.Drawing.Size(246, 22);
 			this.textBox3.TabIndex = 8;
 			// 
 			// AgregarProveedores
@@ -135,7 +135,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-			this.ClientSize = new System.Drawing.Size(1382, 653);
+			this.ClientSize = new System.Drawing.Size(782, 453);
 			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnagregar2);
@@ -146,6 +146,7 @@
 			this.Controls.Add(this.lbltitulof2);
 			this.Controls.Add(this.btnRegresar);
 			this.Name = "AgregarProveedores";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AgregarProveedores";
 			this.Load += new System.EventHandler(this.proveedoresAgregar_Load);
 			this.ResumeLayout(false);

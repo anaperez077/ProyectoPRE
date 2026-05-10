@@ -194,6 +194,10 @@ namespace ProjectoPRE.Menu
             formularioHijo.Show();
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 
 }

@@ -43,6 +43,9 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.LemonChiffon;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -50,13 +53,13 @@
             this.clID,
             this.clNombre,
             this.clTelefono});
-			this.dataGridView1.Location = new System.Drawing.Point(623, 207);
+			this.dataGridView1.Location = new System.Drawing.Point(513, 202);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowHeadersWidth = 51;
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView1.Size = new System.Drawing.Size(648, 259);
+			this.dataGridView1.Size = new System.Drawing.Size(666, 154);
 			this.dataGridView1.TabIndex = 1;
 			// 
 			// clID
@@ -85,11 +88,12 @@
 			// 
 			// btnAgregar
 			// 
+			this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnAgregar.Location = new System.Drawing.Point(1062, 156);
+			this.btnAgregar.Location = new System.Drawing.Point(960, 152);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(147, 30);
 			this.btnAgregar.TabIndex = 2;
@@ -99,21 +103,24 @@
 			// 
 			// tbox_buscar
 			// 
-			this.tbox_buscar.Location = new System.Drawing.Point(772, 159);
+			this.tbox_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.tbox_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbox_buscar.Location = new System.Drawing.Point(608, 155);
 			this.tbox_buscar.Name = "tbox_buscar";
-			this.tbox_buscar.Size = new System.Drawing.Size(100, 22);
+			this.tbox_buscar.Size = new System.Drawing.Size(254, 24);
 			this.tbox_buscar.TabIndex = 3;
 			this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
 			// 
 			// btnEditar
 			// 
+			this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.btnEditar.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEditar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnEditar.Location = new System.Drawing.Point(710, 498);
+			this.btnEditar.Location = new System.Drawing.Point(562, 402);
 			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(206, 33);
+			this.btnEditar.Size = new System.Drawing.Size(232, 56);
 			this.btnEditar.TabIndex = 4;
 			this.btnEditar.Text = "Editar";
 			this.btnEditar.UseVisualStyleBackColor = false;
@@ -121,13 +128,14 @@
 			// 
 			// btnEliminar
 			// 
+			this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnEliminar.Location = new System.Drawing.Point(1005, 498);
+			this.btnEliminar.Location = new System.Drawing.Point(899, 402);
 			this.btnEliminar.Name = "btnEliminar";
-			this.btnEliminar.Size = new System.Drawing.Size(204, 33);
+			this.btnEliminar.Size = new System.Drawing.Size(232, 56);
 			this.btnEliminar.TabIndex = 5;
 			this.btnEliminar.Text = "Eliminar";
 			this.btnEliminar.UseVisualStyleBackColor = false;
@@ -135,23 +143,25 @@
 			// 
 			// label2
 			// 
+			this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(698, 162);
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(519, 158);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(59, 16);
+			this.label2.Size = new System.Drawing.Size(66, 18);
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Buscar:";
 			// 
 			// Titulo
 			// 
+			this.Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.Titulo.AutoSize = true;
 			this.Titulo.BackColor = System.Drawing.Color.Wheat;
 			this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(848, 91);
+			this.Titulo.Location = new System.Drawing.Point(720, 83);
 			this.Titulo.Name = "Titulo";
 			this.Titulo.Size = new System.Drawing.Size(213, 22);
 			this.Titulo.TabIndex = 11;
@@ -172,6 +182,7 @@
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "Proveedores";
 			this.Text = "Proveedores";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Proveedores_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);

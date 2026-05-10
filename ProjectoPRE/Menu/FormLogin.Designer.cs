@@ -37,11 +37,11 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.label1.Location = new System.Drawing.Point(556, 124);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(264, 39);
+			this.label1.Size = new System.Drawing.Size(257, 44);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Escoja su perfil";
 			// 
@@ -50,7 +50,7 @@
 			this.btnAdmin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
 			this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdmin.Font = new System.Drawing.Font("Microsoft Tai Le", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAdmin.ForeColor = System.Drawing.Color.Black;
 			this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAdmin.Location = new System.Drawing.Point(334, 225);
@@ -66,7 +66,7 @@
 			// 
 			this.btnEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 			this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEmpleado.Font = new System.Drawing.Font("Microsoft Tai Le", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnEmpleado.Location = new System.Drawing.Point(743, 225);
 			this.btnEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -88,6 +88,7 @@
 			this.Controls.Add(this.label1);
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "FormLogin";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -49,6 +49,7 @@
 			// 
 			// lblProducto
 			// 
+			this.lblProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lblProducto.AutoSize = true;
 			this.lblProducto.BackColor = System.Drawing.Color.Transparent;
 			this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,26 +61,30 @@
 			// 
 			// cmbProducto
 			// 
+			this.cmbProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.cmbProducto.BackColor = System.Drawing.Color.White;
+			this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbProducto.FormattingEnabled = true;
 			this.cmbProducto.Location = new System.Drawing.Point(466, 144);
 			this.cmbProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.cmbProducto.Name = "cmbProducto";
-			this.cmbProducto.Size = new System.Drawing.Size(695, 24);
+			this.cmbProducto.Size = new System.Drawing.Size(695, 26);
 			this.cmbProducto.TabIndex = 1;
 			// 
 			// label2
 			// 
+			this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(463, 197);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(73, 16);
+			this.label2.Size = new System.Drawing.Size(79, 18);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Cantidad:";
 			// 
 			// numCantidad
 			// 
+			this.numCantidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.numCantidad.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.numCantidad.Location = new System.Drawing.Point(566, 195);
 			this.numCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -89,8 +94,10 @@
 			// 
 			// btnAgregar
 			// 
+			this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.btnAgregar.Location = new System.Drawing.Point(1016, 186);
 			this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -103,6 +110,9 @@
 			// 
 			// dgvCarrito
 			// 
+			this.dgvCarrito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvCarrito.BackgroundColor = System.Drawing.Color.LemonChiffon;
 			this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -112,12 +122,12 @@
             this.colCantidad,
             this.colPrecio,
             this.colSubtotal});
-			this.dgvCarrito.Location = new System.Drawing.Point(421, 248);
+			this.dgvCarrito.Location = new System.Drawing.Point(376, 253);
 			this.dgvCarrito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.dgvCarrito.Name = "dgvCarrito";
 			this.dgvCarrito.RowHeadersWidth = 51;
 			this.dgvCarrito.RowTemplate.Height = 24;
-			this.dgvCarrito.Size = new System.Drawing.Size(810, 150);
+			this.dgvCarrito.Size = new System.Drawing.Size(886, 112);
 			this.dgvCarrito.TabIndex = 5;
 			// 
 			// colID
@@ -157,23 +167,25 @@
 			// 
 			// lblTotal
 			// 
+			this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblTotal.AutoSize = true;
 			this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTotal.ForeColor = System.Drawing.Color.Black;
-			this.lblTotal.Location = new System.Drawing.Point(1052, 412);
+			this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTotal.ForeColor = System.Drawing.Color.Maroon;
+			this.lblTotal.Location = new System.Drawing.Point(1033, 418);
 			this.lblTotal.Name = "lblTotal";
-			this.lblTotal.Size = new System.Drawing.Size(179, 20);
+			this.lblTotal.Size = new System.Drawing.Size(209, 25);
 			this.lblTotal.TabIndex = 6;
 			this.lblTotal.Text = "Total a Pagar: $0.00";
 			// 
 			// btnFinalizar
 			// 
+			this.btnFinalizar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.btnFinalizar.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnFinalizar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnFinalizar.Location = new System.Drawing.Point(708, 464);
+			this.btnFinalizar.Location = new System.Drawing.Point(717, 466);
 			this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnFinalizar.Name = "btnFinalizar";
 			this.btnFinalizar.Size = new System.Drawing.Size(193, 54);
@@ -192,6 +204,7 @@
 			// 
 			// Titulo
 			// 
+			this.Titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.Titulo.AutoSize = true;
 			this.Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -223,6 +236,7 @@
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "Ventas";
 			this.Text = "Ventas";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Ventas_Load);
 			((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
