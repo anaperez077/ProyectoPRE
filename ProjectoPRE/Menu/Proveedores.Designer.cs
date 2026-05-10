@@ -88,14 +88,14 @@
 			// 
 			// btnAgregar
 			// 
-			this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.btnAgregar.BackColor = System.Drawing.SystemColors.HotTrack;
 			this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnAgregar.Location = new System.Drawing.Point(960, 152);
+			this.btnAgregar.Location = new System.Drawing.Point(466, 402);
 			this.btnAgregar.Name = "btnAgregar";
-			this.btnAgregar.Size = new System.Drawing.Size(147, 30);
+			this.btnAgregar.Size = new System.Drawing.Size(232, 56);
 			this.btnAgregar.TabIndex = 2;
 			this.btnAgregar.Text = "Agregar";
 			this.btnAgregar.UseVisualStyleBackColor = false;
@@ -105,9 +105,9 @@
 			// 
 			this.tbox_buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.tbox_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbox_buscar.Location = new System.Drawing.Point(608, 155);
+			this.tbox_buscar.Location = new System.Drawing.Point(736, 140);
 			this.tbox_buscar.Name = "tbox_buscar";
-			this.tbox_buscar.Size = new System.Drawing.Size(254, 24);
+			this.tbox_buscar.Size = new System.Drawing.Size(289, 24);
 			this.tbox_buscar.TabIndex = 3;
 			this.tbox_buscar.TextChanged += new System.EventHandler(this.tbox_buscar_TextChanged);
 			// 
@@ -118,7 +118,7 @@
 			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEditar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnEditar.Location = new System.Drawing.Point(562, 402);
+			this.btnEditar.Location = new System.Drawing.Point(731, 402);
 			this.btnEditar.Name = "btnEditar";
 			this.btnEditar.Size = new System.Drawing.Size(232, 56);
 			this.btnEditar.TabIndex = 4;
@@ -133,7 +133,7 @@
 			this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.btnEliminar.Location = new System.Drawing.Point(899, 402);
+			this.btnEliminar.Location = new System.Drawing.Point(997, 402);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(232, 56);
 			this.btnEliminar.TabIndex = 5;
@@ -146,7 +146,7 @@
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(519, 158);
+			this.label2.Location = new System.Drawing.Point(664, 142);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(66, 18);
 			this.label2.TabIndex = 6;
@@ -161,11 +161,11 @@
 			this.Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Titulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.Titulo.Location = new System.Drawing.Point(720, 83);
+			this.Titulo.Location = new System.Drawing.Point(738, 78);
 			this.Titulo.Name = "Titulo";
-			this.Titulo.Size = new System.Drawing.Size(213, 22);
+			this.Titulo.Size = new System.Drawing.Size(246, 22);
 			this.Titulo.TabIndex = 11;
-			this.Titulo.Text = "Gestion de Proveedores";
+			this.Titulo.Text = "Información de Proveedores";
 			// 
 			// Proveedores
 			// 

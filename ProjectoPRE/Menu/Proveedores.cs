@@ -50,8 +50,8 @@ namespace ProjectoPRE
         {
             CargarDatos();
 
-            // Si el usuario es "Cliente" (o como se llame tu rol), ocultamos botones
-            if (rolUsuario == "Cliente")
+            // Si el usuario no es "Administrador", ocultamos botones
+            if (rolUsuario != "Admin")
             {
                 btnAgregar.Visible = false;
                 btnEditar.Visible = false;

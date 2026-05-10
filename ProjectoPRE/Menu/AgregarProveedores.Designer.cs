@@ -57,11 +57,11 @@
 			// 
 			this.lbltitulof2.AutoSize = true;
 			this.lbltitulof2.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbltitulof2.Location = new System.Drawing.Point(249, 95);
+			this.lbltitulof2.Location = new System.Drawing.Point(246, 99);
 			this.lbltitulof2.Name = "lbltitulof2";
-			this.lbltitulof2.Size = new System.Drawing.Size(289, 33);
+			this.lbltitulof2.Size = new System.Drawing.Size(296, 33);
 			this.lbltitulof2.TabIndex = 1;
-			this.lbltitulof2.Text = "Agregar Proveedores";
+			this.lbltitulof2.Text = "Gestión de Proveedor";
 			// 
 			// lblnombre
 			// 
